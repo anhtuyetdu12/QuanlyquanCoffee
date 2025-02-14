@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|d:\\danangarchitectureuniversity\\doancncnpm\\project\\quanlyquancafe\\quanlyquancafe\\uctable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\uctable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\quanlyquancafe\\frmmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\frmmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\quanlyquancafe\\frmmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\frmmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|d:\\danangarchitectureuniversity\\doancncnpm\\project\\quanlyquancafe\\quanlyquancafe\\uchome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\uchome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|d:\\danangarchitectureuniversity\\doancncnpm\\project\\quanlyquancafe\\quanlyquancafe\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 318,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UCTable.cs [Design]",
+              "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCTable.cs",
+              "RelativeDocumentMoniker": "Quanlyquancafe\\UCTable.cs",
+              "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCTable.cs [Design]",
+              "RelativeToolTip": "Quanlyquancafe\\UCTable.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T14:55:14.364Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UCHome.cs [Design]",
+              "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCHome.cs",
+              "RelativeDocumentMoniker": "Quanlyquancafe\\UCHome.cs",
+              "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCHome.cs [Design]",
+              "RelativeToolTip": "Quanlyquancafe\\UCHome.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T14:39:22.127Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Database.cs",
+              "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\Database.cs",
+              "RelativeDocumentMoniker": "Quanlyquancafe\\Database.cs",
+              "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\Database.cs",
+              "RelativeToolTip": "Quanlyquancafe\\Database.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAowF0AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T12:50:28.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmManager.cs",
+              "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\frmManager.cs",
+              "RelativeDocumentMoniker": "Quanlyquancafe\\frmManager.cs",
+              "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\frmManager.cs",
+              "RelativeToolTip": "Quanlyquancafe\\frmManager.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAIwEIAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T05:59:32.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmManager.cs [Design]",
+              "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\frmManager.cs",
+              "RelativeDocumentMoniker": "Quanlyquancafe\\frmManager.cs",
+              "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\frmManager.cs [Design]",
+              "RelativeToolTip": "Quanlyquancafe\\frmManager.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T04:58:11.366Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

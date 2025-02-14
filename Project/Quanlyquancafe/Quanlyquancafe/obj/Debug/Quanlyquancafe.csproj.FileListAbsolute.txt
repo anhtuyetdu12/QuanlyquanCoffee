@@ -1,0 +1,10 @@
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\bin\Debug\Quanlyquancafe.exe.config
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\bin\Debug\Quanlyquancafe.exe
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\bin\Debug\Quanlyquancafe.pdb
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.csproj.AssemblyReference.cache
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.frmManager.resources
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.Properties.Resources.resources
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.csproj.GenerateResource.cache
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.csproj.CoreCompileInputs.cache
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.exe
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.pdb
