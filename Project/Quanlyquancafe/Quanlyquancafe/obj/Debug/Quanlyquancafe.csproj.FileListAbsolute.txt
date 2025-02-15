@@ -8,3 +8,11 @@ D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe
 D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.csproj.CoreCompileInputs.cache
 D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.exe
 D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.pdb
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.UCHome.resources
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.UCTable.resources
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.UCBill.resources
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.UCProduct.resources
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.UCStatistic.resources
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.AddProduct.resources
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.AddCategory.resources
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.UCCategoryy.resources

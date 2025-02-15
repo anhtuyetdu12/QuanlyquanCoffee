@@ -1,0 +1,6 @@
+﻿# Thư mục hệ thống Visual Studio
+.vs/
+
+# Thư mục biên dịch
+bin/
+obj/

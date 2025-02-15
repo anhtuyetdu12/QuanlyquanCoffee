@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCategory.Designer.cs">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="frmManager.cs">
       <SubType>Form</SubType>
@@ -55,11 +68,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCBill.Designer.cs">
+      <DependentUpon>UCBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCategoryy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCategoryy.Designer.cs">
+      <DependentUpon>UCCategoryy.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCHome.Designer.cs">
       <DependentUpon>UCHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCProduct.Designer.cs">
+      <DependentUpon>UCProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCStatistic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCStatistic.Designer.cs">
+      <DependentUpon>UCStatistic.cs</DependentUpon>
     </Compile>
     <Compile Include="UCTable.cs">
       <SubType>UserControl</SubType>
@@ -67,6 +104,12 @@
     <Compile Include="UCTable.Designer.cs">
       <DependentUpon>UCTable.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCategory.resx">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManager.resx">
       <DependentUpon>frmManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,8 +123,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCBill.resx">
+      <DependentUpon>UCBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCategoryy.resx">
+      <DependentUpon>UCCategoryy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCHome.resx">
       <DependentUpon>UCHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCProduct.resx">
+      <DependentUpon>UCProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCStatistic.resx">
+      <DependentUpon>UCStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCTable.resx">
       <DependentUpon>UCTable.cs</DependentUpon>
@@ -149,6 +204,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add-product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay-later.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transparency.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\changes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

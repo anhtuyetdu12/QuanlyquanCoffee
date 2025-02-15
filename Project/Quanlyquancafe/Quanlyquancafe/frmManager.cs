@@ -64,5 +64,35 @@ namespace Quanlyquancafe
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            ucHome1.BringToFront();
+        }
+
+        private void btnTable_Click(object sender, EventArgs e)
+        {
+            ucTable1.BringToFront();
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            ucProduct1.BringToFront();
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            ucCategoryy1.BringToFront();
+        }
+
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            ucBill1.BringToFront();
+        }
+
+        private void btnStatistic_Click(object sender, EventArgs e)
+        {
+            ucStatistic3.BringToFront();
+        }
     }
 }
