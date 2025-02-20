@@ -162,10 +162,12 @@
             // 
             // ptbThemAnh
             // 
-            this.ptbThemAnh.InitialImage = global::Quanlyquancafe.Properties.Resources.photo;
+            this.ptbThemAnh.Image = global::Quanlyquancafe.Properties.Resources.photo;
+            this.ptbThemAnh.InitialImage = null;
             this.ptbThemAnh.Location = new System.Drawing.Point(413, 149);
             this.ptbThemAnh.Name = "ptbThemAnh";
             this.ptbThemAnh.Size = new System.Drawing.Size(154, 118);
+            this.ptbThemAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbThemAnh.TabIndex = 5;
             this.ptbThemAnh.TabStop = false;
             // 

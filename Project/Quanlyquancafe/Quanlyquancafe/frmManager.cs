@@ -53,7 +53,7 @@ namespace Quanlyquancafe
 
         private void frmManager_Load(object sender, EventArgs e)
         {
-
+            ucHome1.BringToFront(); // Hiển thị ucHome đầu tiên khi load form
         }
 
         private void pnlTop_MouseDown(object sender, MouseEventArgs e)

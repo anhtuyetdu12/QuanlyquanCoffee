@@ -59,3 +59,22 @@ CREATE TABLE BillInfo
 	FOREIGN KEY (idFood) REFERENCES dbo.Food(id)
 )
 GO
+
+INSERT dbo.TableFood (name)
+VALUES (N'Bàn 4')
+INSERT dbo.TableFood (name)
+VALUES (N'Bàn 5')
+INSERT dbo.TableFood (name)
+VALUES (N'Bàn 6')
+
+GO
+
+select * from dbo.TableFood
+
+GO
+
+CREATE PROC USP_GetTableList
+AS SELECT * FROM dbo.TableFood
+GO 
+update dbo.TableFood set status = N'Có người' Where id =3
+EXEC dbo.USP_GetTableList
