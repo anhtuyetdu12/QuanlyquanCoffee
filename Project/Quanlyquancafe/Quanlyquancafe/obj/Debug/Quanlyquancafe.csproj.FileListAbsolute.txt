@@ -16,3 +16,5 @@ D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe
 D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.AddProduct.resources
 D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.AddCategory.resources
 D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.UCCategoryy.resources
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.AddMenu.resources
+D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.UCMenu.resources

@@ -35,10 +35,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnaddSP = new System.Windows.Forms.Button();
-            this.ptbExit = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
+            this.ptbExit = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIDdanhmuc
@@ -112,6 +112,7 @@
             this.btnaddSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
             this.btnaddSP.FlatAppearance.BorderSize = 0;
             this.btnaddSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnaddSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaddSP.ForeColor = System.Drawing.Color.White;
             this.btnaddSP.Location = new System.Drawing.Point(157, 228);
             this.btnaddSP.Margin = new System.Windows.Forms.Padding(4);
@@ -120,6 +121,15 @@
             this.btnaddSP.TabIndex = 23;
             this.btnaddSP.Text = "Thêm danh mục";
             this.btnaddSP.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.ptbExit);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(417, 26);
+            this.panel1.TabIndex = 24;
             // 
             // ptbExit
             // 
@@ -133,15 +143,6 @@
             this.ptbExit.TabIndex = 4;
             this.ptbExit.TabStop = false;
             this.ptbExit.Click += new System.EventHandler(this.ptbExit_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.ptbExit);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(417, 26);
-            this.panel1.TabIndex = 24;
             // 
             // AddCategory
             // 
@@ -160,8 +161,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddCategory";
             this.Text = "AddCategory";
-            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

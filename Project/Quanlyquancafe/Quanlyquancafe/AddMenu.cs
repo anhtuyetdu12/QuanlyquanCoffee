@@ -10,31 +10,21 @@ using System.Windows.Forms;
 
 namespace Quanlyquancafe
 {
-    public partial class AddProduct : Form
+    public partial class AddMenu : Form
     {
-        public AddProduct()
+        public AddMenu()
         {
             InitializeComponent();
         }
 
         private void ptbExit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đóng form  thêm sản phẩm này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đóng form  thêm thực đơn này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 this.Close(); // Đóng form nhỏ
             }
-        }
-
-        private void AddProduct_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnaddSP_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

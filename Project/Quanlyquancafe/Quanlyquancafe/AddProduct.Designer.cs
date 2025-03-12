@@ -38,14 +38,16 @@
             this.numGia = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.txtIDMon = new System.Windows.Forms.TextBox();
-            this.ptbThemAnh = new System.Windows.Forms.PictureBox();
             this.btnaddSP = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ptbExit = new System.Windows.Forms.PictureBox();
+            this.cbbThucDon = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ptbThemAnh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numGia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbThemAnh)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbThemAnh)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +67,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-            this.label2.Location = new System.Drawing.Point(31, 146);
+            this.label2.Location = new System.Drawing.Point(31, 155);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 18);
@@ -77,7 +79,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-            this.label3.Location = new System.Drawing.Point(31, 188);
+            this.label3.Location = new System.Drawing.Point(31, 259);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 18);
@@ -89,7 +91,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-            this.label4.Location = new System.Drawing.Point(34, 231);
+            this.label4.Location = new System.Drawing.Point(34, 311);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 18);
@@ -113,7 +115,7 @@
             // txtTenMon
             // 
             this.txtTenMon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTenMon.Location = new System.Drawing.Point(198, 142);
+            this.txtTenMon.Location = new System.Drawing.Point(198, 147);
             this.txtTenMon.Multiline = true;
             this.txtTenMon.Name = "txtTenMon";
             this.txtTenMon.Size = new System.Drawing.Size(167, 26);
@@ -122,14 +124,14 @@
             // cbbDanhMuc
             // 
             this.cbbDanhMuc.FormattingEnabled = true;
-            this.cbbDanhMuc.Location = new System.Drawing.Point(198, 185);
+            this.cbbDanhMuc.Location = new System.Drawing.Point(198, 251);
             this.cbbDanhMuc.Name = "cbbDanhMuc";
             this.cbbDanhMuc.Size = new System.Drawing.Size(167, 26);
             this.cbbDanhMuc.TabIndex = 8;
             // 
             // numGia
             // 
-            this.numGia.Location = new System.Drawing.Point(198, 231);
+            this.numGia.Location = new System.Drawing.Point(198, 305);
             this.numGia.Maximum = new decimal(new int[] {
             1215752192,
             23,
@@ -154,36 +156,27 @@
             // txtIDMon
             // 
             this.txtIDMon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIDMon.Location = new System.Drawing.Point(198, 101);
+            this.txtIDMon.Location = new System.Drawing.Point(198, 95);
             this.txtIDMon.Multiline = true;
             this.txtIDMon.Name = "txtIDMon";
             this.txtIDMon.Size = new System.Drawing.Size(167, 26);
             this.txtIDMon.TabIndex = 11;
-            // 
-            // ptbThemAnh
-            // 
-            this.ptbThemAnh.Image = global::Quanlyquancafe.Properties.Resources.photo;
-            this.ptbThemAnh.InitialImage = null;
-            this.ptbThemAnh.Location = new System.Drawing.Point(413, 149);
-            this.ptbThemAnh.Name = "ptbThemAnh";
-            this.ptbThemAnh.Size = new System.Drawing.Size(154, 118);
-            this.ptbThemAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbThemAnh.TabIndex = 5;
-            this.ptbThemAnh.TabStop = false;
             // 
             // btnaddSP
             // 
             this.btnaddSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
             this.btnaddSP.FlatAppearance.BorderSize = 0;
             this.btnaddSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnaddSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaddSP.ForeColor = System.Drawing.Color.White;
-            this.btnaddSP.Location = new System.Drawing.Point(198, 304);
+            this.btnaddSP.Location = new System.Drawing.Point(198, 356);
             this.btnaddSP.Margin = new System.Windows.Forms.Padding(4);
             this.btnaddSP.Name = "btnaddSP";
             this.btnaddSP.Size = new System.Drawing.Size(167, 32);
             this.btnaddSP.TabIndex = 12;
             this.btnaddSP.Text = "Thêm sản phẩm";
             this.btnaddSP.UseVisualStyleBackColor = false;
+            this.btnaddSP.Click += new System.EventHandler(this.btnaddSP_Click);
             // 
             // panel1
             // 
@@ -207,12 +200,45 @@
             this.ptbExit.TabStop = false;
             this.ptbExit.Click += new System.EventHandler(this.ptbExit_Click);
             // 
+            // cbbThucDon
+            // 
+            this.cbbThucDon.FormattingEnabled = true;
+            this.cbbThucDon.Location = new System.Drawing.Point(198, 199);
+            this.cbbThucDon.Name = "cbbThucDon";
+            this.cbbThucDon.Size = new System.Drawing.Size(167, 26);
+            this.cbbThucDon.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.label6.Location = new System.Drawing.Point(31, 207);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 18);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Thực Đơn";
+            // 
+            // ptbThemAnh
+            // 
+            this.ptbThemAnh.Image = global::Quanlyquancafe.Properties.Resources.photo;
+            this.ptbThemAnh.InitialImage = null;
+            this.ptbThemAnh.Location = new System.Drawing.Point(413, 149);
+            this.ptbThemAnh.Name = "ptbThemAnh";
+            this.ptbThemAnh.Size = new System.Drawing.Size(154, 118);
+            this.ptbThemAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbThemAnh.TabIndex = 5;
+            this.ptbThemAnh.TabStop = false;
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(595, 410);
+            this.Controls.Add(this.cbbThucDon);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnaddSP);
             this.Controls.Add(this.txtIDMon);
@@ -232,10 +258,11 @@
             this.Name = "AddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddProduct";
+            this.Load += new System.EventHandler(this.AddProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numGia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbThemAnh)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbThemAnh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,5 +284,7 @@
         private System.Windows.Forms.Button btnaddSP;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox ptbExit;
+        private System.Windows.Forms.ComboBox cbbThucDon;
+        private System.Windows.Forms.Label label6;
     }
 }

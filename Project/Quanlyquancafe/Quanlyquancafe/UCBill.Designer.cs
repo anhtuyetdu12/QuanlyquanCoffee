@@ -45,7 +45,7 @@
             this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBill.Location = new System.Drawing.Point(3, 3);
             this.dgvBill.Name = "dgvBill";
-            this.dgvBill.Size = new System.Drawing.Size(828, 434);
+            this.dgvBill.Size = new System.Drawing.Size(867, 532);
             this.dgvBill.TabIndex = 0;
             // 
             // panel2
@@ -56,7 +56,7 @@
             this.panel2.Controls.Add(this.dtpBatDau);
             this.panel2.Location = new System.Drawing.Point(1, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 48);
+            this.panel2.Size = new System.Drawing.Size(870, 48);
             this.panel2.TabIndex = 3;
             // 
             // btnThongke
@@ -94,7 +94,7 @@
             this.panel1.Controls.Add(this.dgvBill);
             this.panel1.Location = new System.Drawing.Point(1, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 440);
+            this.panel1.Size = new System.Drawing.Size(873, 538);
             this.panel1.TabIndex = 2;
             // 
             // UCBill
@@ -105,7 +105,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "UCBill";
-            this.Size = new System.Drawing.Size(837, 494);
+            this.Size = new System.Drawing.Size(874, 591);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

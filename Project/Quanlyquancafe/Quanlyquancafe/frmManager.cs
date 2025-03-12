@@ -53,7 +53,7 @@ namespace Quanlyquancafe
 
         private void frmManager_Load(object sender, EventArgs e)
         {
-            ucHome1.BringToFront(); // Hiển thị ucHome đầu tiên khi load form
+            ucHome3.BringToFront(); // Hiển thị ucHome đầu tiên khi load form
         }
 
         private void pnlTop_MouseDown(object sender, MouseEventArgs e)
@@ -67,32 +67,37 @@ namespace Quanlyquancafe
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            ucHome1.BringToFront();
+            ucHome3.BringToFront();
         }
 
         private void btnTable_Click(object sender, EventArgs e)
         {
-            ucTable1.BringToFront();
+            ucTable3.BringToFront();
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            ucProduct1.BringToFront();
+            ucProduct2.BringToFront();
         }
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
-            ucCategoryy1.BringToFront();
+            ucCategoryy2.BringToFront();
         }
 
         private void btnBill_Click(object sender, EventArgs e)
         {
-            ucBill1.BringToFront();
+            ucBill2.BringToFront();
         }
 
         private void btnStatistic_Click(object sender, EventArgs e)
         {
-            ucStatistic3.BringToFront();
+            ucStatistic4.BringToFront();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            ucMenu1.BringToFront();
         }
     }
 }

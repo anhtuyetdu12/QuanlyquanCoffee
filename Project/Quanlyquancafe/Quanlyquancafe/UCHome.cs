@@ -12,6 +12,9 @@ namespace Quanlyquancafe
 {
     public partial class UCHome : UserControl
     {
+        private Database db;
+        private DataTable dt;
+
         public UCHome()
         {
             InitializeComponent();
@@ -23,10 +26,10 @@ namespace Quanlyquancafe
         {
             flpTable.Controls.Clear();
 
-            Database db = new Database();
+            db = new Database();
             string sql = "USP_GetTableList"; // Tên Stored Procedure
 
-            DataTable dt = db.SelectData(sql);
+            dt = db.SelectData(sql);
 
             if (dt != null)
             {
@@ -55,7 +58,7 @@ namespace Quanlyquancafe
                     }
                     btn.Image = statusImage;
                     btn.Text = row["name"].ToString();
-                    btn.Tag = row["id"];
+                    btn.Tag = row["id"]; //gắn table id vào
                     btn.Click += Btn_Click;
 
                     flpTable.Controls.Add(btn);
@@ -63,11 +66,51 @@ namespace Quanlyquancafe
             }
         }
 
+        //show hóa đơn ra cụ thể
         private void Btn_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
-            int tableId = (int)clickedButton.Tag;
-            MessageBox.Show("Bạn đã chọn bàn có ID: " + tableId);
+            int tableId = (int)clickedButton.Tag; // lấy ID bàn được chọn
+
+            LoadBill(tableId);
+        }
+
+        // Load ds bill theo bàn 
+        void LoadBill(int tableId)
+        {
+            lvBill.Items.Clear(); // Xóa dữ liệu cũ trước khi hiển thị mới
+            txtTongTien.Text = "0"; // Reset tổng tiền trước khi tính lại
+
+            db = new Database();
+            string sql = "USP_GetBillTable"; // Tên Stored Procedure
+
+            var lstPra = new List<CustomParameter>()
+            {
+                new CustomParameter()
+                {
+                    key = "@tableId",
+                    value = tableId.ToString() // Chuyển số sang chuỗi nếu cần
+                }
+            };
+
+            dt = db.SelectData(sql, lstPra);
+            double tongTien = 0;
+
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    ListViewItem item = new ListViewItem(row["TenMon"].ToString());
+                    item.SubItems.Add(row["SoLuong"].ToString());
+                    item.SubItems.Add(row["DonGia"].ToString());
+                    item.SubItems.Add(row["ThanhTien"].ToString());
+                 
+                    lvBill.Items.Add(item);
+                    tongTien += Convert.ToDouble(row["ThanhTien"]); // có dấu phẩy động 
+                }
+            }
+            // Hiển thị tổng tiền vào txtTongTien với định dạng tiền tệ
+            txtTongTien.Text = tongTien.ToString("N0") + " VND";
         }
 
         private void btnThanhtoan_Click(object sender, EventArgs e)

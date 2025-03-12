@@ -54,7 +54,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
-            this.label1.Location = new System.Drawing.Point(33, 20);
+            this.label1.Location = new System.Drawing.Point(30, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 25);
             this.label1.TabIndex = 1;
@@ -65,7 +65,7 @@
             this.panel1.Controls.Add(this.dgvTable);
             this.panel1.Location = new System.Drawing.Point(0, 142);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(557, 352);
+            this.panel1.Size = new System.Drawing.Size(557, 449);
             this.panel1.TabIndex = 2;
             // 
             // dgvTable
@@ -74,7 +74,7 @@
             this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTable.Location = new System.Drawing.Point(3, 0);
             this.dgvTable.Name = "dgvTable";
-            this.dgvTable.Size = new System.Drawing.Size(554, 352);
+            this.dgvTable.Size = new System.Drawing.Size(554, 446);
             this.dgvTable.TabIndex = 0;
             // 
             // panel2
@@ -88,7 +88,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(563, 142);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(274, 349);
+            this.panel2.Size = new System.Drawing.Size(308, 446);
             this.panel2.TabIndex = 3;
             // 
             // cbbTrangThai
@@ -238,7 +238,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "UCTable";
-            this.Size = new System.Drawing.Size(837, 494);
+            this.Size = new System.Drawing.Size(874, 591);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).EndInit();
             this.panel2.ResumeLayout(false);

@@ -41,15 +41,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(837, 494);
+            this.panel1.Size = new System.Drawing.Size(874, 591);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 253);
+            this.panel2.Location = new System.Drawing.Point(0, 313);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(837, 241);
+            this.panel2.Size = new System.Drawing.Size(874, 278);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -58,7 +58,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(837, 39);
+            this.panel3.Size = new System.Drawing.Size(874, 39);
             this.panel3.TabIndex = 2;
             // 
             // label1
@@ -81,7 +81,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "UCStatistic";
-            this.Size = new System.Drawing.Size(837, 494);
+            this.Size = new System.Drawing.Size(874, 591);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
