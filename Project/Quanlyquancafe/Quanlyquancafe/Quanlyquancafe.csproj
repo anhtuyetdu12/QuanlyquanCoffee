@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCategory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddCategory.Designer.cs">
-      <DependentUpon>AddCategory.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +65,12 @@
     </Compile>
     <Compile Include="AddMenu.Designer.cs">
       <DependentUpon>AddMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPayment.Designer.cs">
+      <DependentUpon>FormPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,9 +116,6 @@
     <Compile Include="UCTable.Designer.cs">
       <DependentUpon>UCTable.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddCategory.resx">
-      <DependentUpon>AddCategory.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddMenu.resx">
       <DependentUpon>AddMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPayment.resx">
+      <DependentUpon>FormPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -273,6 +273,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\cc039f6796219e5ac01148ff24bb3c0b1.jpg" />
+    <None Include="Resources\f872aeed068846e39664a6d2701abc74.jpg" />
+    <None Include="Resources\6be6fbb8b635e1afac35db92847ded2b.jpg" />
+    <None Include="Resources\97d2a715a19419fa4bc0d1a61c583b0d.jpg" />
+    <None Include="Resources\cc039f6796219e5ac01148ff24bb3c0b.jpg" />
+    <None Include="Resources\15f6a931c8e5e9a957811c38d1b3b6af.jpg" />
+    <None Include="Resources\8cd3b4ff83b43ead3ad1000816a388af.jpg" />
+    <None Include="Resources\changes %281%29.png" />
+    <None Include="Resources\685172283d4adf3eb7031acc82e7736f.jpg" />
+    <None Include="Resources\7a29dfc903d98c6ba13b687ef1fa1d1a.jpg" />
+    <None Include="Resources\a5a4f8e14b373de359bf47dd0f006f14.jpg" />
+    <None Include="Resources\2b210d74d2eff3186ba4fb3017a322ff.jpg" />
+    <None Include="Resources\a56eb1071fbfac3ed4da8849b8e5b00b1.jpg" />
+    <None Include="Resources\a56eb1071fbfac3ed4da8849b8e5b00b.jpg" />
+    <None Include="Resources\confirmation.png" />
+    <None Include="Resources\printer.png" />
     <None Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup />

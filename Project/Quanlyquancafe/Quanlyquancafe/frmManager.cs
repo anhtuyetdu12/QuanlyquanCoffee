@@ -54,6 +54,15 @@ namespace Quanlyquancafe
         private void frmManager_Load(object sender, EventArgs e)
         {
             ucHome3.BringToFront(); // Hiển thị ucHome đầu tiên khi load form
+
+            // Lắng nghe sự kiện cập nhật từ UCTable
+            ucTable3.TableUpdated += UCTable_TableUpdated;
+        }
+
+        private void UCTable_TableUpdated(object sender, EventArgs e)
+        {
+            ucTable3.LoadDSTable(); // Load lại danh sách bàn trong dgvTable
+            ucHome3.LoadTable(); // Load lại danh sách bàn trong flpTable
         }
 
         private void pnlTop_MouseDown(object sender, MouseEventArgs e)

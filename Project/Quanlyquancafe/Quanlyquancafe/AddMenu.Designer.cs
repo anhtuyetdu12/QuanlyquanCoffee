@@ -34,12 +34,12 @@
             this.txtIDThucDon = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.numSoLuong = new System.Windows.Forms.NumericUpDown();
-            this.cbbDanhMucTD = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
+            this.txtTenMenu = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
@@ -115,14 +115,6 @@
             this.numSoLuong.Size = new System.Drawing.Size(193, 20);
             this.numSoLuong.TabIndex = 24;
             // 
-            // cbbDanhMucTD
-            // 
-            this.cbbDanhMucTD.FormattingEnabled = true;
-            this.cbbDanhMucTD.Location = new System.Drawing.Point(198, 227);
-            this.cbbDanhMucTD.Name = "cbbDanhMucTD";
-            this.cbbDanhMucTD.Size = new System.Drawing.Size(193, 21);
-            this.cbbDanhMucTD.TabIndex = 23;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -167,9 +159,9 @@
             this.label6.Location = new System.Drawing.Point(34, 230);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 18);
+            this.label6.Size = new System.Drawing.Size(74, 18);
             this.label6.TabIndex = 29;
-            this.label6.Text = "Danh Mục";
+            this.label6.Text = "Tên Menu";
             // 
             // dtpNgay
             // 
@@ -178,19 +170,28 @@
             this.dtpNgay.Size = new System.Drawing.Size(193, 20);
             this.dtpNgay.TabIndex = 31;
             // 
+            // txtTenMenu
+            // 
+            this.txtTenMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenMenu.Location = new System.Drawing.Point(198, 222);
+            this.txtTenMenu.Multiline = true;
+            this.txtTenMenu.Name = "txtTenMenu";
+            this.txtTenMenu.Size = new System.Drawing.Size(193, 26);
+            this.txtTenMenu.TabIndex = 32;
+            // 
             // AddMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(515, 426);
+            this.Controls.Add(this.txtTenMenu);
             this.Controls.Add(this.dtpNgay);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnaddSP);
             this.Controls.Add(this.txtIDThucDon);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.numSoLuong);
-            this.Controls.Add(this.cbbDanhMucTD);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -214,11 +215,11 @@
         private System.Windows.Forms.TextBox txtIDThucDon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numSoLuong;
-        private System.Windows.Forms.ComboBox cbbDanhMucTD;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtpNgay;
+        private System.Windows.Forms.TextBox txtTenMenu;
     }
 }

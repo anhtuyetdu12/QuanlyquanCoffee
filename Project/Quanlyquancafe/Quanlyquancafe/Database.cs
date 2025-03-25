@@ -27,7 +27,7 @@ namespace Quanlyquancafe
                 MessageBox.Show("connected failed: " + ex.Message);
             }
         }
-        //hàm truy vấn dữ liệu
+        //hàm truy vấn dữ liệu (trả về một DataTable duy nhất)
         public DataTable SelectData(string sql, List<CustomParameter> lstPara = null)
         {
             try
@@ -57,6 +57,40 @@ namespace Quanlyquancafe
                 conn.Close();
             }
         }
+
+        // hỗ trợ lấy nhiều bảng cùng lúc từ Stored Procedure.
+        public DataSet SelectDataSet(string sql, List<CustomParameter> lstPara = null)
+        {
+            try
+            {
+                conn.Open(); // Mở kết nối
+                cmd = new SqlCommand(sql, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                if (lstPara != null)
+                {
+                    foreach (var para in lstPara) // Gán tham số
+                    {
+                        cmd.Parameters.AddWithValue(para.key, para.value);
+                    }
+                }
+
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd); // Đọc dữ liệu
+                da.Fill(ds); // Đổ dữ liệu vào DataSet
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load dữ liệu: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                conn.Close(); // Đóng kết nối
+            }
+        }
+
         //hàm thêm , update dlieu, trả về bảng dl
         public int ExeCute(string sql, List<CustomParameter> lstPara = null)
         {

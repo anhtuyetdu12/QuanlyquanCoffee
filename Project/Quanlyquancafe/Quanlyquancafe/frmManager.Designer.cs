@@ -30,24 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ptbState = new System.Windows.Forms.PictureBox();
+            this.ptbExit = new System.Windows.Forms.PictureBox();
+            this.ptbMinimize = new System.Windows.Forms.PictureBox();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlTongHop = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMenu = new System.Windows.Forms.Button();
-            this.btnCategory = new System.Windows.Forms.Button();
-            this.btnStatistic = new System.Windows.Forms.Button();
-            this.btnBill = new System.Windows.Forms.Button();
-            this.btnProduct = new System.Windows.Forms.Button();
-            this.btnTable = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ptbState = new System.Windows.Forms.PictureBox();
-            this.ptbExit = new System.Windows.Forms.PictureBox();
-            this.ptbMinimize = new System.Windows.Forms.PictureBox();
+            this.ucTable3 = new Quanlyquancafe.UCTable();
+            this.ucStatistic4 = new Quanlyquancafe.UCStatistic();
+            this.ucProduct2 = new Quanlyquancafe.UCProduct();
+            this.ucCategoryy2 = new Quanlyquancafe.UCCategoryy();
+            this.ucBill2 = new Quanlyquancafe.UCBill();
+            this.ucHome3 = new Quanlyquancafe.UCHome();
             this.ucMenu1 = new Quanlyquancafe.UCMenu();
             this.ucCategoryy1 = new Quanlyquancafe.UCCategoryy();
             this.ucStatistic3 = new Quanlyquancafe.UCStatistic();
@@ -59,20 +57,22 @@
             this.ucStatistic1 = new Quanlyquancafe.UCStatistic();
             this.ucTable1 = new Quanlyquancafe.UCTable();
             this.ucHome1 = new Quanlyquancafe.UCHome();
-            this.ucHome3 = new Quanlyquancafe.UCHome();
-            this.ucBill2 = new Quanlyquancafe.UCBill();
-            this.ucCategoryy2 = new Quanlyquancafe.UCCategoryy();
-            this.ucProduct2 = new Quanlyquancafe.UCProduct();
-            this.ucStatistic4 = new Quanlyquancafe.UCStatistic();
-            this.ucTable3 = new Quanlyquancafe.UCTable();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.btnCategory = new System.Windows.Forms.Button();
+            this.btnStatistic = new System.Windows.Forms.Button();
+            this.btnBill = new System.Windows.Forms.Button();
+            this.btnProduct = new System.Windows.Forms.Button();
+            this.btnTable = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.pnlTongHop.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbState)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMinimize)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.pnlTongHop.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -89,6 +89,17 @@
             this.pnlTop.TabIndex = 0;
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Quanlyquancafe.Properties.Resources.lg2;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 27);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -98,6 +109,45 @@
             this.label1.Size = new System.Drawing.Size(172, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Phần mềm quản lý quán Cafe";
+            // 
+            // ptbState
+            // 
+            this.ptbState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbState.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbState.Image = global::Quanlyquancafe.Properties.Resources.max;
+            this.ptbState.Location = new System.Drawing.Point(953, 8);
+            this.ptbState.Name = "ptbState";
+            this.ptbState.Size = new System.Drawing.Size(20, 20);
+            this.ptbState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbState.TabIndex = 2;
+            this.ptbState.TabStop = false;
+            this.ptbState.Click += new System.EventHandler(this.ptbState_Click);
+            // 
+            // ptbExit
+            // 
+            this.ptbExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbExit.Image = global::Quanlyquancafe.Properties.Resources.close_icon_16;
+            this.ptbExit.Location = new System.Drawing.Point(979, 8);
+            this.ptbExit.Name = "ptbExit";
+            this.ptbExit.Size = new System.Drawing.Size(20, 20);
+            this.ptbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbExit.TabIndex = 1;
+            this.ptbExit.TabStop = false;
+            this.ptbExit.Click += new System.EventHandler(this.ptbExit_Click);
+            // 
+            // ptbMinimize
+            // 
+            this.ptbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbMinimize.Image = global::Quanlyquancafe.Properties.Resources._786364;
+            this.ptbMinimize.Location = new System.Drawing.Point(926, 8);
+            this.ptbMinimize.Name = "ptbMinimize";
+            this.ptbMinimize.Size = new System.Drawing.Size(20, 20);
+            this.ptbMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbMinimize.TabIndex = 0;
+            this.ptbMinimize.TabStop = false;
+            this.ptbMinimize.Click += new System.EventHandler(this.ptbMinimize_Click);
             // 
             // pnlRight
             // 
@@ -158,6 +208,142 @@
             this.pnlTongHop.Name = "pnlTongHop";
             this.pnlTongHop.Size = new System.Drawing.Size(876, 594);
             this.pnlTongHop.TabIndex = 1;
+            // 
+            // ucTable3
+            // 
+            this.ucTable3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucTable3.Location = new System.Drawing.Point(2, 0);
+            this.ucTable3.Name = "ucTable3";
+            this.ucTable3.Size = new System.Drawing.Size(874, 591);
+            this.ucTable3.TabIndex = 16;
+            // 
+            // ucStatistic4
+            // 
+            this.ucStatistic4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucStatistic4.Location = new System.Drawing.Point(3, 0);
+            this.ucStatistic4.Name = "ucStatistic4";
+            this.ucStatistic4.Size = new System.Drawing.Size(874, 591);
+            this.ucStatistic4.TabIndex = 15;
+            // 
+            // ucProduct2
+            // 
+            this.ucProduct2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucProduct2.Location = new System.Drawing.Point(2, 0);
+            this.ucProduct2.Name = "ucProduct2";
+            this.ucProduct2.Size = new System.Drawing.Size(874, 591);
+            this.ucProduct2.TabIndex = 14;
+            // 
+            // ucCategoryy2
+            // 
+            this.ucCategoryy2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucCategoryy2.Location = new System.Drawing.Point(3, 0);
+            this.ucCategoryy2.Name = "ucCategoryy2";
+            this.ucCategoryy2.Size = new System.Drawing.Size(874, 591);
+            this.ucCategoryy2.TabIndex = 13;
+            // 
+            // ucBill2
+            // 
+            this.ucBill2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucBill2.Location = new System.Drawing.Point(5, 0);
+            this.ucBill2.Name = "ucBill2";
+            this.ucBill2.Size = new System.Drawing.Size(874, 591);
+            this.ucBill2.TabIndex = 12;
+            // 
+            // ucHome3
+            // 
+            this.ucHome3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucHome3.Location = new System.Drawing.Point(3, 0);
+            this.ucHome3.Name = "ucHome3";
+            this.ucHome3.Size = new System.Drawing.Size(874, 591);
+            this.ucHome3.TabIndex = 11;
+            // 
+            // ucMenu1
+            // 
+            this.ucMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
+            this.ucMenu1.Location = new System.Drawing.Point(3, 0);
+            this.ucMenu1.Name = "ucMenu1";
+            this.ucMenu1.Size = new System.Drawing.Size(874, 591);
+            this.ucMenu1.TabIndex = 10;
+            // 
+            // ucCategoryy1
+            // 
+            this.ucCategoryy1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucCategoryy1.Location = new System.Drawing.Point(3, 0);
+            this.ucCategoryy1.Name = "ucCategoryy1";
+            this.ucCategoryy1.Size = new System.Drawing.Size(874, 591);
+            this.ucCategoryy1.TabIndex = 9;
+            // 
+            // ucStatistic3
+            // 
+            this.ucStatistic3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucStatistic3.Location = new System.Drawing.Point(0, 0);
+            this.ucStatistic3.Name = "ucStatistic3";
+            this.ucStatistic3.Size = new System.Drawing.Size(837, 494);
+            this.ucStatistic3.TabIndex = 8;
+            // 
+            // ucBill1
+            // 
+            this.ucBill1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucBill1.Location = new System.Drawing.Point(0, 0);
+            this.ucBill1.Name = "ucBill1";
+            this.ucBill1.Size = new System.Drawing.Size(837, 494);
+            this.ucBill1.TabIndex = 7;
+            // 
+            // ucHome2
+            // 
+            this.ucHome2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucHome2.Location = new System.Drawing.Point(0, 0);
+            this.ucHome2.Name = "ucHome2";
+            this.ucHome2.Size = new System.Drawing.Size(837, 494);
+            this.ucHome2.TabIndex = 6;
+            // 
+            // ucStatistic2
+            // 
+            this.ucStatistic2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucStatistic2.Location = new System.Drawing.Point(0, 0);
+            this.ucStatistic2.Name = "ucStatistic2";
+            this.ucStatistic2.Size = new System.Drawing.Size(837, 494);
+            this.ucStatistic2.TabIndex = 5;
+            // 
+            // ucTable2
+            // 
+            this.ucTable2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucTable2.Location = new System.Drawing.Point(0, 0);
+            this.ucTable2.Name = "ucTable2";
+            this.ucTable2.Size = new System.Drawing.Size(837, 494);
+            this.ucTable2.TabIndex = 4;
+            // 
+            // ucProduct1
+            // 
+            this.ucProduct1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucProduct1.Location = new System.Drawing.Point(1, 1);
+            this.ucProduct1.Name = "ucProduct1";
+            this.ucProduct1.Size = new System.Drawing.Size(837, 494);
+            this.ucProduct1.TabIndex = 3;
+            // 
+            // ucStatistic1
+            // 
+            this.ucStatistic1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucStatistic1.Location = new System.Drawing.Point(3, 0);
+            this.ucStatistic1.Name = "ucStatistic1";
+            this.ucStatistic1.Size = new System.Drawing.Size(837, 494);
+            this.ucStatistic1.TabIndex = 2;
+            // 
+            // ucTable1
+            // 
+            this.ucTable1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucTable1.Location = new System.Drawing.Point(0, 0);
+            this.ucTable1.Name = "ucTable1";
+            this.ucTable1.Size = new System.Drawing.Size(837, 494);
+            this.ucTable1.TabIndex = 1;
+            // 
+            // ucHome1
+            // 
+            this.ucHome1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.ucHome1.Location = new System.Drawing.Point(3, 0);
+            this.ucHome1.Name = "ucHome1";
+            this.ucHome1.Size = new System.Drawing.Size(834, 494);
+            this.ucHome1.TabIndex = 0;
             // 
             // panel1
             // 
@@ -301,192 +487,6 @@
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::Quanlyquancafe.Properties.Resources.lg2;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 27);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ptbState
-            // 
-            this.ptbState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbState.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbState.Image = global::Quanlyquancafe.Properties.Resources.max;
-            this.ptbState.Location = new System.Drawing.Point(953, 8);
-            this.ptbState.Name = "ptbState";
-            this.ptbState.Size = new System.Drawing.Size(20, 20);
-            this.ptbState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbState.TabIndex = 2;
-            this.ptbState.TabStop = false;
-            this.ptbState.Click += new System.EventHandler(this.ptbState_Click);
-            // 
-            // ptbExit
-            // 
-            this.ptbExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbExit.Image = global::Quanlyquancafe.Properties.Resources.close_icon_16;
-            this.ptbExit.Location = new System.Drawing.Point(979, 8);
-            this.ptbExit.Name = "ptbExit";
-            this.ptbExit.Size = new System.Drawing.Size(20, 20);
-            this.ptbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbExit.TabIndex = 1;
-            this.ptbExit.TabStop = false;
-            this.ptbExit.Click += new System.EventHandler(this.ptbExit_Click);
-            // 
-            // ptbMinimize
-            // 
-            this.ptbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbMinimize.Image = global::Quanlyquancafe.Properties.Resources._786364;
-            this.ptbMinimize.Location = new System.Drawing.Point(926, 8);
-            this.ptbMinimize.Name = "ptbMinimize";
-            this.ptbMinimize.Size = new System.Drawing.Size(20, 20);
-            this.ptbMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbMinimize.TabIndex = 0;
-            this.ptbMinimize.TabStop = false;
-            this.ptbMinimize.Click += new System.EventHandler(this.ptbMinimize_Click);
-            // 
-            // ucMenu1
-            // 
-            this.ucMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
-            this.ucMenu1.Location = new System.Drawing.Point(3, 0);
-            this.ucMenu1.Name = "ucMenu1";
-            this.ucMenu1.Size = new System.Drawing.Size(874, 591);
-            this.ucMenu1.TabIndex = 10;
-            // 
-            // ucCategoryy1
-            // 
-            this.ucCategoryy1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucCategoryy1.Location = new System.Drawing.Point(3, 0);
-            this.ucCategoryy1.Name = "ucCategoryy1";
-            this.ucCategoryy1.Size = new System.Drawing.Size(874, 591);
-            this.ucCategoryy1.TabIndex = 9;
-            // 
-            // ucStatistic3
-            // 
-            this.ucStatistic3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucStatistic3.Location = new System.Drawing.Point(0, 0);
-            this.ucStatistic3.Name = "ucStatistic3";
-            this.ucStatistic3.Size = new System.Drawing.Size(837, 494);
-            this.ucStatistic3.TabIndex = 8;
-            // 
-            // ucBill1
-            // 
-            this.ucBill1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucBill1.Location = new System.Drawing.Point(0, 0);
-            this.ucBill1.Name = "ucBill1";
-            this.ucBill1.Size = new System.Drawing.Size(837, 494);
-            this.ucBill1.TabIndex = 7;
-            // 
-            // ucHome2
-            // 
-            this.ucHome2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucHome2.Location = new System.Drawing.Point(0, 0);
-            this.ucHome2.Name = "ucHome2";
-            this.ucHome2.Size = new System.Drawing.Size(837, 494);
-            this.ucHome2.TabIndex = 6;
-            // 
-            // ucStatistic2
-            // 
-            this.ucStatistic2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucStatistic2.Location = new System.Drawing.Point(0, 0);
-            this.ucStatistic2.Name = "ucStatistic2";
-            this.ucStatistic2.Size = new System.Drawing.Size(837, 494);
-            this.ucStatistic2.TabIndex = 5;
-            // 
-            // ucTable2
-            // 
-            this.ucTable2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucTable2.Location = new System.Drawing.Point(0, 0);
-            this.ucTable2.Name = "ucTable2";
-            this.ucTable2.Size = new System.Drawing.Size(837, 494);
-            this.ucTable2.TabIndex = 4;
-            // 
-            // ucProduct1
-            // 
-            this.ucProduct1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucProduct1.Location = new System.Drawing.Point(1, 1);
-            this.ucProduct1.Name = "ucProduct1";
-            this.ucProduct1.Size = new System.Drawing.Size(837, 494);
-            this.ucProduct1.TabIndex = 3;
-            // 
-            // ucStatistic1
-            // 
-            this.ucStatistic1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucStatistic1.Location = new System.Drawing.Point(3, 0);
-            this.ucStatistic1.Name = "ucStatistic1";
-            this.ucStatistic1.Size = new System.Drawing.Size(837, 494);
-            this.ucStatistic1.TabIndex = 2;
-            // 
-            // ucTable1
-            // 
-            this.ucTable1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucTable1.Location = new System.Drawing.Point(0, 0);
-            this.ucTable1.Name = "ucTable1";
-            this.ucTable1.Size = new System.Drawing.Size(837, 494);
-            this.ucTable1.TabIndex = 1;
-            // 
-            // ucHome1
-            // 
-            this.ucHome1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucHome1.Location = new System.Drawing.Point(3, 0);
-            this.ucHome1.Name = "ucHome1";
-            this.ucHome1.Size = new System.Drawing.Size(834, 494);
-            this.ucHome1.TabIndex = 0;
-            // 
-            // ucHome3
-            // 
-            this.ucHome3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucHome3.Location = new System.Drawing.Point(3, 0);
-            this.ucHome3.Name = "ucHome3";
-            this.ucHome3.Size = new System.Drawing.Size(874, 591);
-            this.ucHome3.TabIndex = 11;
-            // 
-            // ucBill2
-            // 
-            this.ucBill2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucBill2.Location = new System.Drawing.Point(5, 0);
-            this.ucBill2.Name = "ucBill2";
-            this.ucBill2.Size = new System.Drawing.Size(874, 591);
-            this.ucBill2.TabIndex = 12;
-            // 
-            // ucCategoryy2
-            // 
-            this.ucCategoryy2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucCategoryy2.Location = new System.Drawing.Point(3, 0);
-            this.ucCategoryy2.Name = "ucCategoryy2";
-            this.ucCategoryy2.Size = new System.Drawing.Size(874, 591);
-            this.ucCategoryy2.TabIndex = 13;
-            // 
-            // ucProduct2
-            // 
-            this.ucProduct2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucProduct2.Location = new System.Drawing.Point(2, 0);
-            this.ucProduct2.Name = "ucProduct2";
-            this.ucProduct2.Size = new System.Drawing.Size(874, 591);
-            this.ucProduct2.TabIndex = 14;
-            // 
-            // ucStatistic4
-            // 
-            this.ucStatistic4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucStatistic4.Location = new System.Drawing.Point(3, 0);
-            this.ucStatistic4.Name = "ucStatistic4";
-            this.ucStatistic4.Size = new System.Drawing.Size(874, 591);
-            this.ucStatistic4.TabIndex = 15;
-            // 
-            // ucTable3
-            // 
-            this.ucTable3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
-            this.ucTable3.Location = new System.Drawing.Point(2, 0);
-            this.ucTable3.Name = "ucTable3";
-            this.ucTable3.Size = new System.Drawing.Size(874, 591);
-            this.ucTable3.TabIndex = 16;
-            // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -506,13 +506,13 @@
             this.Load += new System.EventHandler(this.frmManager_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.pnlTongHop.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbState)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMinimize)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.pnlTongHop.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

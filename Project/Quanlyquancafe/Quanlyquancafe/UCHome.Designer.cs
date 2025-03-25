@@ -42,23 +42,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.nmGiamGia = new System.Windows.Forms.NumericUpDown();
+            this.btnThanhtoan = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.numDemMon = new System.Windows.Forms.NumericUpDown();
-            this.cbbMonAn = new System.Windows.Forms.ComboBox();
-            this.cbbDanhMuc = new System.Windows.Forms.ComboBox();
             this.picDo = new System.Windows.Forms.PictureBox();
             this.picXanh = new System.Windows.Forms.PictureBox();
+            this.numDemMon = new System.Windows.Forms.NumericUpDown();
             this.btnThemMon = new System.Windows.Forms.Button();
-            this.btnThanhtoan = new System.Windows.Forms.Button();
+            this.cbbMonAn = new System.Windows.Forms.ComboBox();
+            this.cbbDanhMuc = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmGiamGia)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDemMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picXanh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDemMon)).BeginInit();
             this.SuspendLayout();
             // 
             // flpTable
@@ -66,7 +66,7 @@
             this.flpTable.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpTable.Location = new System.Drawing.Point(0, 0);
             this.flpTable.Name = "flpTable";
-            this.flpTable.Size = new System.Drawing.Size(434, 591);
+            this.flpTable.Size = new System.Drawing.Size(434, 589);
             this.flpTable.TabIndex = 1;
             // 
             // panel1
@@ -127,7 +127,7 @@
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(440, 509);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(434, 79);
+            this.panel2.Size = new System.Drawing.Size(434, 76);
             this.panel2.TabIndex = 2;
             // 
             // btnGiamGia
@@ -137,12 +137,13 @@
             this.btnGiamGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGiamGia.ForeColor = System.Drawing.Color.White;
-            this.btnGiamGia.Location = new System.Drawing.Point(115, 11);
+            this.btnGiamGia.Location = new System.Drawing.Point(129, 9);
             this.btnGiamGia.Name = "btnGiamGia";
             this.btnGiamGia.Size = new System.Drawing.Size(75, 23);
             this.btnGiamGia.TabIndex = 10;
             this.btnGiamGia.Text = "Giảm giá";
             this.btnGiamGia.UseVisualStyleBackColor = false;
+            this.btnGiamGia.Click += new System.EventHandler(this.btnGiamGia_Click);
             // 
             // btnChuyenBan
             // 
@@ -180,20 +181,37 @@
             // 
             this.txtTongTien.BackColor = System.Drawing.Color.White;
             this.txtTongTien.ForeColor = System.Drawing.Color.Red;
-            this.txtTongTien.Location = new System.Drawing.Point(115, 39);
+            this.txtTongTien.Location = new System.Drawing.Point(129, 37);
             this.txtTongTien.Multiline = true;
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
-            this.txtTongTien.Size = new System.Drawing.Size(145, 27);
+            this.txtTongTien.Size = new System.Drawing.Size(155, 27);
             this.txtTongTien.TabIndex = 6;
             this.txtTongTien.Text = "0";
             // 
             // nmGiamGia
             // 
-            this.nmGiamGia.Location = new System.Drawing.Point(196, 13);
+            this.nmGiamGia.Location = new System.Drawing.Point(220, 11);
             this.nmGiamGia.Name = "nmGiamGia";
             this.nmGiamGia.Size = new System.Drawing.Size(64, 20);
             this.nmGiamGia.TabIndex = 5;
+            // 
+            // btnThanhtoan
+            // 
+            this.btnThanhtoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnThanhtoan.FlatAppearance.BorderSize = 0;
+            this.btnThanhtoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnThanhtoan.ForeColor = System.Drawing.Color.White;
+            this.btnThanhtoan.Image = global::Quanlyquancafe.Properties.Resources.pay_later;
+            this.btnThanhtoan.Location = new System.Drawing.Point(304, 11);
+            this.btnThanhtoan.Name = "btnThanhtoan";
+            this.btnThanhtoan.Size = new System.Drawing.Size(96, 53);
+            this.btnThanhtoan.TabIndex = 3;
+            this.btnThanhtoan.Text = "Thanh toán";
+            this.btnThanhtoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThanhtoan.UseVisualStyleBackColor = false;
+            this.btnThanhtoan.Click += new System.EventHandler(this.btnThanhtoan_Click);
             // 
             // panel3
             // 
@@ -233,40 +251,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Có người";
             // 
-            // numDemMon
-            // 
-            this.numDemMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.numDemMon.Location = new System.Drawing.Point(251, 28);
-            this.numDemMon.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.numDemMon.Name = "numDemMon";
-            this.numDemMon.Size = new System.Drawing.Size(45, 20);
-            this.numDemMon.TabIndex = 3;
-            this.numDemMon.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // cbbMonAn
-            // 
-            this.cbbMonAn.FormattingEnabled = true;
-            this.cbbMonAn.Location = new System.Drawing.Point(3, 39);
-            this.cbbMonAn.Name = "cbbMonAn";
-            this.cbbMonAn.Size = new System.Drawing.Size(151, 21);
-            this.cbbMonAn.TabIndex = 1;
-            // 
-            // cbbDanhMuc
-            // 
-            this.cbbDanhMuc.FormattingEnabled = true;
-            this.cbbDanhMuc.Location = new System.Drawing.Point(3, 12);
-            this.cbbDanhMuc.Name = "cbbDanhMuc";
-            this.cbbDanhMuc.Size = new System.Drawing.Size(151, 21);
-            this.cbbDanhMuc.TabIndex = 0;
-            // 
             // picDo
             // 
             this.picDo.Image = global::Quanlyquancafe.Properties.Resources.checked__1_;
@@ -287,6 +271,24 @@
             this.picXanh.TabIndex = 4;
             this.picXanh.TabStop = false;
             // 
+            // numDemMon
+            // 
+            this.numDemMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.numDemMon.Location = new System.Drawing.Point(251, 28);
+            this.numDemMon.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.numDemMon.Name = "numDemMon";
+            this.numDemMon.Size = new System.Drawing.Size(45, 20);
+            this.numDemMon.TabIndex = 3;
+            this.numDemMon.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // btnThemMon
             // 
             this.btnThemMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
@@ -302,23 +304,24 @@
             this.btnThemMon.Text = "Thêm món";
             this.btnThemMon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThemMon.UseVisualStyleBackColor = false;
+            this.btnThemMon.Click += new System.EventHandler(this.btnThemMon_Click);
             // 
-            // btnThanhtoan
+            // cbbMonAn
             // 
-            this.btnThanhtoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-            this.btnThanhtoan.FlatAppearance.BorderSize = 0;
-            this.btnThanhtoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnThanhtoan.ForeColor = System.Drawing.Color.White;
-            this.btnThanhtoan.Image = global::Quanlyquancafe.Properties.Resources.pay_later;
-            this.btnThanhtoan.Location = new System.Drawing.Point(286, 16);
-            this.btnThanhtoan.Name = "btnThanhtoan";
-            this.btnThanhtoan.Size = new System.Drawing.Size(91, 53);
-            this.btnThanhtoan.TabIndex = 3;
-            this.btnThanhtoan.Text = "Thanh toán";
-            this.btnThanhtoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnThanhtoan.UseVisualStyleBackColor = false;
-            this.btnThanhtoan.Click += new System.EventHandler(this.btnThanhtoan_Click);
+            this.cbbMonAn.FormattingEnabled = true;
+            this.cbbMonAn.Location = new System.Drawing.Point(3, 39);
+            this.cbbMonAn.Name = "cbbMonAn";
+            this.cbbMonAn.Size = new System.Drawing.Size(151, 21);
+            this.cbbMonAn.TabIndex = 1;
+            // 
+            // cbbDanhMuc
+            // 
+            this.cbbDanhMuc.FormattingEnabled = true;
+            this.cbbDanhMuc.Location = new System.Drawing.Point(3, 12);
+            this.cbbDanhMuc.Name = "cbbDanhMuc";
+            this.cbbDanhMuc.Size = new System.Drawing.Size(151, 21);
+            this.cbbDanhMuc.TabIndex = 0;
+            this.cbbDanhMuc.SelectedIndexChanged += new System.EventHandler(this.cbbDanhMuc_SelectedIndexChanged);
             // 
             // UCHome
             // 
@@ -331,16 +334,16 @@
             this.Controls.Add(this.flpTable);
             this.Location = new System.Drawing.Point(112, 16);
             this.Name = "UCHome";
-            this.Size = new System.Drawing.Size(872, 591);
+            this.Size = new System.Drawing.Size(872, 589);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmGiamGia)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDemMon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picXanh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDemMon)).EndInit();
             this.ResumeLayout(false);
 
         }
