@@ -15,6 +15,5 @@ D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe
 D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.UCStatistic.resources
 D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.AddProduct.resources
 D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.UCCategoryy.resources
-D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.AddMenu.resources
 D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.UCMenu.resources
 D:\DanangArchitectureUniversity\DoAnCNCNPM\Project\Quanlyquancafe\Quanlyquancafe\obj\Debug\Quanlyquancafe.FormPayment.resources

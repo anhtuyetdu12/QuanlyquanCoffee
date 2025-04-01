@@ -49,7 +49,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblGiamGia = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSauGiam = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,9 +128,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(16, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 25);
+            this.label2.Size = new System.Drawing.Size(206, 25);
             this.label2.TabIndex = 23;
-            this.label2.Text = "Payment";
+            this.label2.Text = "Trang Thanh Toán";
             // 
             // txtTotal
             // 
@@ -302,18 +302,18 @@
             this.label10.TabIndex = 38;
             this.label10.Text = "Tiền sau khi giảm :";
             // 
-            // textBox1
+            // txtSauGiam
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.textBox1.Location = new System.Drawing.Point(184, 412);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(147, 28);
-            this.textBox1.TabIndex = 37;
-            this.textBox1.Text = "0";
+            this.txtSauGiam.BackColor = System.Drawing.Color.White;
+            this.txtSauGiam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSauGiam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtSauGiam.Location = new System.Drawing.Point(184, 412);
+            this.txtSauGiam.Multiline = true;
+            this.txtSauGiam.Name = "txtSauGiam";
+            this.txtSauGiam.ReadOnly = true;
+            this.txtSauGiam.Size = new System.Drawing.Size(147, 28);
+            this.txtSauGiam.TabIndex = 37;
+            this.txtSauGiam.Text = "0";
             // 
             // FormPayment
             // 
@@ -322,7 +322,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(401, 577);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSauGiam);
             this.Controls.Add(this.lblGiamGia);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -377,6 +377,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblGiamGia;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSauGiam;
     }
 }

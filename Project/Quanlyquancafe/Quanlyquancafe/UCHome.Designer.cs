@@ -158,6 +158,7 @@
             this.btnChuyenBan.TabIndex = 9;
             this.btnChuyenBan.Text = "Chuyển bàn";
             this.btnChuyenBan.UseVisualStyleBackColor = false;
+            this.btnChuyenBan.Click += new System.EventHandler(this.btnChuyenBan_Click);
             // 
             // cbbChuyenBan
             // 
@@ -195,6 +196,7 @@
             this.nmGiamGia.Name = "nmGiamGia";
             this.nmGiamGia.Size = new System.Drawing.Size(64, 20);
             this.nmGiamGia.TabIndex = 5;
+            this.nmGiamGia.ValueChanged += new System.EventHandler(this.nmGiamGia_ValueChanged);
             // 
             // btnThanhtoan
             // 

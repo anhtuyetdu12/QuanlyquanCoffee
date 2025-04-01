@@ -71,7 +71,7 @@
             this.btnThongke.Name = "btnThongke";
             this.btnThongke.Size = new System.Drawing.Size(82, 48);
             this.btnThongke.TabIndex = 4;
-            this.btnThongke.Text = "Hóa Đơn";
+            this.btnThongke.Text = "Thống kê";
             this.btnThongke.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThongke.UseVisualStyleBackColor = false;
             // 

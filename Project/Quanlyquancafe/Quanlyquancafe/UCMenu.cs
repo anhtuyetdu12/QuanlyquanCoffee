@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +16,14 @@ namespace Quanlyquancafe
         private Database db;
 
         public UCMenu()
-        {
-            db = new Database();
-
+        {          
             InitializeComponent();
         }
 
         private void UCMenu_Load(object sender, EventArgs e)
         {
+            db = new Database();
+
             LoadMenu();
 
             dgvMenu.Columns[1].HeaderText = "Ngày thêm";
@@ -31,7 +32,7 @@ namespace Quanlyquancafe
             dgvMenu.Columns[2].HeaderText = "Số lượng";
             dgvMenu.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            dgvMenu.Columns[3].HeaderText = "Tên món";
+            dgvMenu.Columns[3].HeaderText = "Mã món";
             dgvMenu.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dgvMenu.DefaultCellStyle.ForeColor = Color.Black;
@@ -59,9 +60,9 @@ namespace Quanlyquancafe
 
         private void btnthemmenu_Click(object sender, EventArgs e)
         {
-            if (txtTenMon.Text.Trim().Length == 0)
+            if (txtIDMon.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Vui lòng nhập tên món", "Ràng buộc dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập mã món", "Ràng buộc dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (numSoLuong.Value <= 0)
@@ -69,19 +70,26 @@ namespace Quanlyquancafe
                 MessageBox.Show("Số lượng phải lớn hơn 0", "Ràng buộc dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-           
+            // Kiểm tra ngày nhập có đúng không
+            DateTime ngayThem;
+            if (!DateTime.TryParseExact(mtbNgayThem.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out ngayThem))
+            {
+                MessageBox.Show("Ngày nhập không hợp lệ. Vui lòng nhập theo định dạng dd/MM/yyyy", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
 
             var lstPara = new List<CustomParameter>()
             {
                 new CustomParameter
                 {
                     key = "@ngayThem",
-                    value = dtpNgay.Value == null ? DateTime.Now.ToString("yyyy-MM-dd") : dtpNgay.Value.ToString("yyyy-MM-dd")
+                    value = ngayThem.ToString("yyyy-MM-dd")
                 },               
                 new CustomParameter
                 {
-                    key = "@tenMon",
-                    value = txtTenMon.Text
+                    key = "@maMon",
+                    value = txtIDMon.Text
                 },
                 new CustomParameter
                 {
@@ -95,9 +103,11 @@ namespace Quanlyquancafe
                 MessageBox.Show("Thêm mới menu thành công!", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadMenu();
                 dgvMenu.Refresh();
-                txtTenMon.Text = null;
+                txtIDMon.Text = null;
                 numSoLuong.Value = 0;
+               
             }
+            mtbNgayThem.Text = DateTime.Now.ToString("dd/MM/yyyy ");
         }
         int id = -1;
 
@@ -108,9 +118,9 @@ namespace Quanlyquancafe
                 MessageBox.Show("Vui lòng chọn menu cần cập nhật", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (txtTenMon.Text.Trim().Length == 0)
+            if (txtIDMon.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Vui lòng nhập tên món", "Ràng buộc dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập mã món", "Ràng buộc dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (numSoLuong.Value <= 0)
@@ -118,6 +128,14 @@ namespace Quanlyquancafe
                 MessageBox.Show("Số lượng phải lớn hơn 0", "Ràng buộc dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            // Thêm kiểm tra ngày nhập
+            DateTime ngayThem;
+            if (!DateTime.TryParseExact(mtbNgayThem.Text, "dd/MM/yyyy", null, DateTimeStyles.None, out ngayThem))
+            {
+                MessageBox.Show("Ngày nhập không hợp lệ. Vui lòng nhập theo định dạng dd/MM/yyyy", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var lstPara = new List<CustomParameter>()
             {
                  new CustomParameter
@@ -128,12 +146,12 @@ namespace Quanlyquancafe
                 new CustomParameter
                 {
                     key = "@ngayThem",
-                    value = dtpNgay.Value == null ? DateTime.Now.ToString("yyyy-MM-dd") : dtpNgay.Value.ToString("yyyy-MM-dd")
+                    value = ngayThem.ToString("yyyy-MM-dd")
                 },               
                 new CustomParameter
                 {
-                    key = "@tenMon",
-                    value = txtTenMon.Text
+                    key = "@maMon",
+                    value = txtIDMon.Text
                 },
                 new CustomParameter
                 {
@@ -146,11 +164,12 @@ namespace Quanlyquancafe
                 MessageBox.Show("Cập nhật menu thành công!", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadMenu();
                 dgvMenu.Refresh();
-                txtTenMon.Text = null;
+                txtIDMon.Text = null;
                 numSoLuong.Value = 0;
                 id = -1;
 
             }
+            mtbNgayThem.Text = DateTime.Now.ToString("dd/MM/yyyy ");
         }
 
         private void btnxoamenu_Click(object sender, EventArgs e)
@@ -177,11 +196,11 @@ namespace Quanlyquancafe
                     MessageBox.Show("Xóa menu thành công!", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadMenu();
                     dgvMenu.Refresh();
-                    txtTenMon.Text = null;
+                    txtIDMon.Text = null;
                     numSoLuong.Value = 0;
                     id = -1;
                 }
-               
+                mtbNgayThem.Text = DateTime.Now.ToString("dd/MM/yyyy ");
             }
         }
 
@@ -193,19 +212,30 @@ namespace Quanlyquancafe
 
                 id = int.Parse(dgvMenu.Rows[e.RowIndex].Cells[0].Value.ToString());
                 txtIDThucDon.Text = id.ToString();
-                // dtpNgay.Value = DateTime.Parse(dgvMenu.Rows[e.RowIndex].Cells[1].Value.ToString());
-                // Kiểm tra và lấy ngày
-                if (row.Cells[1].Value != null && DateTime.TryParse(row.Cells[1].Value.ToString(), out DateTime dateValue))
+
+                // Định dạng ngày chỉ hiển thị dd/MM/yyyy
+                if (row.Cells[1].Value != null && DateTime.TryParse(row.Cells[1].Value.ToString(), out DateTime ngayThem))
                 {
-                    dtpNgay.Value = dateValue;
+                    mtbNgayThem.Text = ngayThem.ToString("dd/MM/yyyy");
                 }
                 else
                 {
-                    dtpNgay.Value = DateTime.Now; // Ngày mặc định
+                    mtbNgayThem.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 }
 
-                numSoLuong.Value = int.Parse(dgvMenu.Rows[e.RowIndex].Cells[2].Value.ToString());
-                txtTenMon.Text = dgvMenu.Rows[e.RowIndex].Cells[3].Value.ToString();
+                if (dgvMenu.Rows[e.RowIndex].Cells[2].Value != null)
+                {
+                    string value = dgvMenu.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    if (int.TryParse(value, out int soLuong))
+                    {
+                        numSoLuong.Value = soLuong;
+                    }
+                    else
+                    {
+                        numSoLuong.Value = 0; 
+                    }
+                }
+                txtIDMon.Text = dgvMenu.Rows[e.RowIndex].Cells[3].Value.ToString();
 
 
             }

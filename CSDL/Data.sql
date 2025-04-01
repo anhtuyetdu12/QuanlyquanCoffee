@@ -357,7 +357,7 @@ delete dbo.BillInfo
 delete dbo.Bill
 
 -- tạo trigger update billinfo
-create trigger UTG_UpdateBillInfo
+alter trigger UTG_UpdateBillInfo
 on dbo.BillInfo for insert, update
 as
 begin
@@ -369,8 +369,18 @@ begin
 
 	select @idTable = idTable from dbo.Bill where id = @idBill and status = 0
 
-	update dbo.TableFood set status = N'Có người' where id = @idTable
+	declare @count int
+	select @count = count(*) from dbo.BillInfo where idBill = @idBill
 
+	if(@count > 0)
+	begin
+		update dbo.TableFood set status = N'Có người' where id = @idTable
+	end
+	else
+	begin
+		update dbo.TableFood set status = N'Trống' where id = @idTable
+	end
+	
 end
 go
 
@@ -676,4 +686,132 @@ begin
 	if @@ROWCOUNT > 0 return 1
 	else return 0;
 end
+
+--hàm load Food ----
+create proc LoadFood
+	@timKiem nvarchar(100)
+as
+begin
+	 SELECT f.id, f.name, f.price, f.idFoodCategory, 
+           SUM(m.count) AS totalCount, 
+           MAX(m.addDate) AS lastAddedDate
+    FROM dbo.Food f
+    LEFT JOIN dbo.Menu m ON f.id = m.idFood
+    WHERE f.name LIKE '%' + @timKiem + '%'  -- Lọc tên món ăn trước khi nhóm
+    GROUP BY f.id, f.name, f.price, f.idFoodCategory;
+end
+--hàm thêm Food
+create proc ThemFood
+	@tenMon nvarchar(100),
+    @gia float,
+    @idDanhMuc int
+as
+begin
+	insert into dbo.Food (name, price, idFoodCategory)
+    VALUES (@tenMon, @gia, @idDanhMuc);
+	if @@ROWCOUNT > 0 return 1
+	else return 0;
+	SELECT SCOPE_IDENTITY(); -- Trả về ID mới vừa thêm
+end
+-- hàm sửa Food
+create proc CapNhatFood
+	@id INT,
+    @tenMon nvarchar(100),
+    @gia float,
+    @idDanhMuc int
+as
+begin
+	update dbo.Food
+	set name = @tenMon,
+		price = @gia,
+        idFoodCategory = @idDanhMuc
+	where id = @id;
+
+	if @@ROWCOUNT > 0 return 1
+	else return 0;
+end
+--hàm xóa Food
+create proc XoaFood
+	@id int
+as
+begin
+	delete from dbo.Food
+	where id = @id;
+	DELETE FROM dbo.Menu WHERE idFood = @id; -- Xóa trong Menu trước
+    DELETE FROM dbo.Food WHERE id = @id; -- Xóa trong Food sau
+	if @@ROWCOUNT > 0 return 1
+	else return 0;
+end
+
+select * from dbo.Menu
+
+-- tạo selectDanhMuc để lấy ra tên danh mục
+create proc selectDanhMuc
+
+as
+begin
+    select * from dbo.FoodCategory
+end
+
+--- chuyển bàn ----
+alter proc USP_SwitchTable
+	@idTable1 int,
+	@idTable2 int
+as
+begin
+	declare @idFirstBill int
+	declare @idSecondBill int
+
+	declare @isFirstTableEmpty int = 1
+	declare @isSecondTableEmpty int = 1
+
+	-- Lấy ID bill của 2 bàn
+	select @idFirstBill = id from dbo.Bill where idTable = @idTable1 And status = 0
+	select @idSecondBill = id from dbo.Bill where idTable = @idTable2 And status = 0
+
+	if(@idFirstBill is NULL)
+	begin
+		-- tao ra bill moi neu bill1 bi null
+		insert into dbo.Bill (dateCheckIn, dateCheckOut, idTable, status)
+		values (GETDATE(), null, @idTable1 , 0) -- 0: chua checkout | 1 : checkout roi
+		select @idFirstBill = max(id) from dbo.Bill where idTable = @idTable1 And status = 0
+		
+	end
+
+	select @isFirstTableEmpty = count(*) from dbo.BillInfo where idBill = @idFirstBill
+	 
+	if(@idSecondBill is NULL)
+	begin
+		-- tao ra bill moi neu bill2 bi null
+		insert into dbo.Bill (dateCheckIn, dateCheckOut, idTable, status)
+		values (GETDATE(), null, @idTable2 , 0) -- 0: chua checkout | 1 : checkout roi
+		select @idSecondBill = max(id) from dbo.Bill where idTable = @idTable2 And status = 0
+		set @isSecondTableEmpty = 1
+	end
+
+	select @isSecondTableEmpty = count(*) from dbo.BillInfo where idBill = @idSecondBill
+
+	 -- Dùng biến để lưu
+	select id INTO IDBillInfoTable FROM dbo.BillInfo Where idBill = @idSecondBill
+
+	update dbo.BillInfo set idBill = @idSecondBill where idBill = @idFirstBill   -- chuyen bill1 -> bill 2
+
+	update dbo.BillInfo set idBill = @idFirstBill where id IN (select * from IDBillInfoTable)  -- chuyen bill2 -> sang bill 1 voi dkien id mac dinh 
+
+	drop table IDBillInfoTable -- xoa bang
+
+	if(@isFirstTableEmpty = 0)
+		update dbo.TableFood set status = N'Trống' where id = @idTable2
+
+	if(@isSecondTableEmpty = 0)
+		update dbo.TableFood set status = N'Trống' where id = @idTable1
+end
+
+update dbo.TableFood set status = N'Trống'
+
+
+delete dbo.Bill
+
+-- tạo proc để lấy ra thông tin thống kê hóa đơn
+
 

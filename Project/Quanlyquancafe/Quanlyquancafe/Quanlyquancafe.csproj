@@ -60,12 +60,6 @@
     <Compile Include="frmManager.Designer.cs">
       <DependentUpon>frmManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddMenu.Designer.cs">
-      <DependentUpon>AddMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,9 +115,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManager.resx">
       <DependentUpon>frmManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddMenu.resx">
-      <DependentUpon>AddMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPayment.resx">
       <DependentUpon>FormPayment.cs</DependentUpon>
@@ -273,6 +264,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\fa1e2a299092d9128398485d79633bc0.jpg" />
+    <None Include="Resources\fb376d968401aa4de35cb79fe0ce72ef.jpg" />
+    <None Include="Resources\f141e80628eb87b93c6e54c03d35f71b.jpg" />
+    <None Include="Resources\cdef482ea2d4a20d3fa7d5219b14e4f2.jpg" />
+    <None Include="Resources\19968b5ce04cd8de08f5d085563f81db.jpg" />
+    <None Include="Resources\e4ef778467af99ddf41cb1cee9331346.jpg" />
+    <None Include="Resources\754c1d31669c76e1db33bd8e98c05634.jpg" />
+    <None Include="Resources\4b0e40aab6c6dacf60b01d30a00aed61.jpg" />
     <None Include="Resources\cc039f6796219e5ac01148ff24bb3c0b1.jpg" />
     <None Include="Resources\f872aeed068846e39664a6d2701abc74.jpg" />
     <None Include="Resources\6be6fbb8b635e1afac35db92847ded2b.jpg" />

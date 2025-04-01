@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Globalization;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Quanlyquancafe
 {
@@ -25,8 +27,9 @@ namespace Quanlyquancafe
             InitializeComponent();
             LoadTable();
             LoadCategory();
+            loadCbbTable(cbbChuyenBan);
 
-           
+
         }
 
         //Load danh sach ban
@@ -72,6 +75,21 @@ namespace Quanlyquancafe
                     flpTable.Controls.Add(btn);
                 }
             }
+        }
+
+        public void loadCbbTable(ComboBox cb)
+        {
+            db = new Database();
+            string sql = "USP_GetTableList"; // Gọi Stored Procedure lấy danh sách bàn
+            dt = db.SelectData(sql);
+
+            if (dt != null)
+            {
+                cb.DataSource = dt;
+                cb.DisplayMember = "name";  // Hiển thị tên bàn
+                cb.ValueMember = "id";      // Lưu ID bàn
+            }
+
         }
 
 
@@ -231,10 +249,13 @@ namespace Quanlyquancafe
         }
 
         // hàm checkout bill
-        public void CheckOut (int id, int discount)
+        public void CheckOut (int id, int? discount)
         {
             db = new Database();
             string sql = "USP_CheckOut"; // Gọi stored procedure để cập nhật trạng thái hóa đơn
+
+            // Nếu discount là null, gán mặc định là 0
+            int finalDiscount = discount ?? 0;
 
             var lstPra = new List<CustomParameter>()
             {
@@ -246,7 +267,7 @@ namespace Quanlyquancafe
                  new CustomParameter()
                 {
                     key = "@discount",
-                    value = discount.ToString()
+                    value = finalDiscount.ToString() // Đảm bảo không truyền null
                 }
             };
 
@@ -298,10 +319,10 @@ namespace Quanlyquancafe
                     decimal totalAmount = Convert.ToDecimal(txtTongTien.Text.Replace(" VND", "").Replace(",", ""));
 
                     // Lấy giá trị giảm giá từ một TextBox hoặc NumericUpDown (ví dụ: numDiscount)
-                    int discountValue = (int) nmGiamGia.Value; // Giảm giá
+                    int discountValue = (int)nmGiamGia.Value; // Giảm giá
 
                     // Tính lại tổng tiền sau khi áp dụng giảm giá
-                    decimal finalAmount = totalAmount - (totalAmount * (discountValue / 100));
+                    decimal finalAmount = totalAmount - (totalAmount * (discountValue / 100m));
 
                     DateTime dateCheckIn = DateTime.Now;
                     DateTime dateCheckOut = DateTime.Now;
@@ -418,6 +439,116 @@ namespace Quanlyquancafe
         private void btnGiamGia_Click(object sender, EventArgs e)
         {
             
+        }
+
+        //chuyển bàn
+        private void SwitchTable(int tableA, int tableB)
+        {           
+            try
+            {
+                var lstPara = new List<CustomParameter>
+                {
+                    new CustomParameter 
+                    { 
+                        key = "@idTable1", 
+                        value = tableA.ToString() 
+                    },
+                    new CustomParameter 
+                    {
+                        key = "@idTable2", 
+                        value = tableB.ToString() 
+                    }
+                };
+
+                int rowsAffected = db.ExeCute("USP_SwitchTable", lstPara);
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Chuyển bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadCbbTable(cbbChuyenBan); // Cập nhật lại danh sách bàn sau khi chuyển
+                }
+                else
+                {
+                    MessageBox.Show("Chuyển bàn thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi chuyển bàn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+        }
+        private void btnChuyenBan_Click(object sender, EventArgs e)
+        {
+
+
+            // Kiểm tra xem flpTable.Tag có chứa ID bàn không
+            if (currentTableId == -1)
+            {
+                MessageBox.Show("Vui lòng chọn bàn cần chuyển!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Lấy tên bàn hiện tại từ danh sách bàn
+            string currentTableName = GetTableNameById(currentTableId);
+
+            // Kiểm tra xem ComboBox có bàn đích hợp lệ không
+            if (cbbChuyenBan.SelectedItem == null || !int.TryParse(cbbChuyenBan.SelectedValue?.ToString(), out int targetTableId))
+            {
+                MessageBox.Show("Vui lòng chọn bàn đích để chuyển!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Lấy tên bàn đích từ ComboBox
+            string targetTableName = cbbChuyenBan.Text; // Hoặc dùng GetTableNameById(targetTableId)
+
+            // Kiểm tra xem bàn đích có trùng bàn hiện tại không
+            if (currentTableId == targetTableId)
+            {
+                MessageBox.Show("Bàn đích không thể trùng với bàn hiện tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn chuyển từ bàn '{currentTableName}' sang bàn '{targetTableName}' không?",
+                                                  "Xác nhận chuyển bàn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                SwitchTable(currentTableId, targetTableId);
+                LoadTable();
+            }
+
+
+        }
+        //lấy tên bàn
+        private string GetTableNameById(int tableId)
+        {
+            string sql = "USP_GetTableList";
+            DataTable dt = db.SelectData(sql);
+
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy danh sách bàn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "";
+            }
+
+            // Kiểm tra nếu DataTable có cột "id"
+            if (!dt.Columns.Contains("id"))
+            {
+                MessageBox.Show("Lỗi: Dữ liệu bàn không chứa cột 'id'. Kiểm tra lại stored procedure!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "";
+            }
+
+            DataRow[] rows = dt.Select($"id = {tableId}");
+            if (rows.Length > 0)
+            {
+                return rows[0]["name"].ToString();
+            }
+
+            return "Không tìm thấy bàn";
+        }
+        public static decimal DiscountValue = 0;
+        private void nmGiamGia_ValueChanged(object sender, EventArgs e)
+        {
+            DiscountValue = (int)nmGiamGia.Value;  // Cập nhật giá trị khi người dùng thay đổi
         }
     }
 }

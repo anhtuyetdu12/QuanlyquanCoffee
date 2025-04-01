@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTimMenu = new System.Windows.Forms.Button();
+            this.btnxoamenu = new System.Windows.Forms.Button();
+            this.btnsuamenu = new System.Windows.Forms.Button();
+            this.btnthemmenu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnTra = new System.Windows.Forms.Button();
@@ -39,33 +44,28 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvMenu = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.txtTenMon = new System.Windows.Forms.TextBox();
-            this.dtpNgay = new System.Windows.Forms.DateTimePicker();
+            this.mtbNgayThem = new System.Windows.Forms.MaskedTextBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtIDMon = new System.Windows.Forms.TextBox();
             this.txtIDThucDon = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.numSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnTimMenu = new System.Windows.Forms.Button();
-            this.btnxoamenu = new System.Windows.Forms.Button();
-            this.btnsuamenu = new System.Windows.Forms.Button();
-            this.btnthemmenu = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -82,6 +82,82 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(874, 67);
             this.panel2.TabIndex = 4;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(10, 26);
+            this.txtTimKiem.Multiline = true;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(119, 25);
+            this.txtTimKiem.TabIndex = 15;
+            // 
+            // btnTimMenu
+            // 
+            this.btnTimMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
+            this.btnTimMenu.FlatAppearance.BorderSize = 0;
+            this.btnTimMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimMenu.ForeColor = System.Drawing.Color.White;
+            this.btnTimMenu.Image = global::Quanlyquancafe.Properties.Resources.search__1_;
+            this.btnTimMenu.Location = new System.Drawing.Point(166, 14);
+            this.btnTimMenu.Name = "btnTimMenu";
+            this.btnTimMenu.Size = new System.Drawing.Size(66, 43);
+            this.btnTimMenu.TabIndex = 14;
+            this.btnTimMenu.Text = "Tìm Kiếm";
+            this.btnTimMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTimMenu.UseVisualStyleBackColor = false;
+            this.btnTimMenu.Click += new System.EventHandler(this.btnTimMenu_Click);
+            // 
+            // btnxoamenu
+            // 
+            this.btnxoamenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
+            this.btnxoamenu.FlatAppearance.BorderSize = 0;
+            this.btnxoamenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnxoamenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnxoamenu.ForeColor = System.Drawing.Color.White;
+            this.btnxoamenu.Image = global::Quanlyquancafe.Properties.Resources.delete;
+            this.btnxoamenu.Location = new System.Drawing.Point(479, 14);
+            this.btnxoamenu.Name = "btnxoamenu";
+            this.btnxoamenu.Size = new System.Drawing.Size(66, 43);
+            this.btnxoamenu.TabIndex = 13;
+            this.btnxoamenu.Text = "Xóa";
+            this.btnxoamenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnxoamenu.UseVisualStyleBackColor = false;
+            this.btnxoamenu.Click += new System.EventHandler(this.btnxoamenu_Click);
+            // 
+            // btnsuamenu
+            // 
+            this.btnsuamenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
+            this.btnsuamenu.FlatAppearance.BorderSize = 0;
+            this.btnsuamenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsuamenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsuamenu.ForeColor = System.Drawing.Color.White;
+            this.btnsuamenu.Image = global::Quanlyquancafe.Properties.Resources.changes;
+            this.btnsuamenu.Location = new System.Drawing.Point(375, 14);
+            this.btnsuamenu.Name = "btnsuamenu";
+            this.btnsuamenu.Size = new System.Drawing.Size(66, 43);
+            this.btnsuamenu.TabIndex = 12;
+            this.btnsuamenu.Text = "Sửa";
+            this.btnsuamenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnsuamenu.UseVisualStyleBackColor = false;
+            this.btnsuamenu.Click += new System.EventHandler(this.btnsuamenu_Click);
+            // 
+            // btnthemmenu
+            // 
+            this.btnthemmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
+            this.btnthemmenu.FlatAppearance.BorderSize = 0;
+            this.btnthemmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnthemmenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnthemmenu.ForeColor = System.Drawing.Color.White;
+            this.btnthemmenu.Image = global::Quanlyquancafe.Properties.Resources.add__1_;
+            this.btnthemmenu.Location = new System.Drawing.Point(271, 14);
+            this.btnthemmenu.Name = "btnthemmenu";
+            this.btnthemmenu.Size = new System.Drawing.Size(66, 43);
+            this.btnthemmenu.TabIndex = 11;
+            this.btnthemmenu.Text = "Thêm ";
+            this.btnthemmenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnthemmenu.UseVisualStyleBackColor = false;
+            this.btnthemmenu.Click += new System.EventHandler(this.btnthemmenu_Click);
             // 
             // label1
             // 
@@ -199,12 +275,12 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.panel4.Controls.Add(this.mtbNgayThem);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.txtTenMon);
-            this.panel4.Controls.Add(this.dtpNgay);
+            this.panel4.Controls.Add(this.txtIDMon);
             this.panel4.Controls.Add(this.txtIDThucDon);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.numSoLuong);
@@ -216,29 +292,67 @@
             this.panel4.Size = new System.Drawing.Size(331, 525);
             this.panel4.TabIndex = 7;
             // 
-            // txtTimKiem
+            // mtbNgayThem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(10, 26);
-            this.txtTimKiem.Multiline = true;
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(119, 25);
-            this.txtTimKiem.TabIndex = 15;
+            this.mtbNgayThem.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.mtbNgayThem.Location = new System.Drawing.Point(137, 209);
+            this.mtbNgayThem.Name = "mtbNgayThem";
+            this.mtbNgayThem.Size = new System.Drawing.Size(166, 20);
+            this.mtbNgayThem.TabIndex = 45;
+            this.mtbNgayThem.Text = "__/__/___";
             // 
-            // txtTenMon
+            // pictureBox4
             // 
-            this.txtTenMon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTenMon.Location = new System.Drawing.Point(137, 255);
-            this.txtTenMon.Multiline = true;
-            this.txtTenMon.Name = "txtTenMon";
-            this.txtTenMon.Size = new System.Drawing.Size(166, 26);
-            this.txtTenMon.TabIndex = 40;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Image = global::Quanlyquancafe.Properties.Resources.cc039f6796219e5ac01148ff24bb3c0b1;
+            this.pictureBox4.Location = new System.Drawing.Point(211, 372);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(120, 153);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 44;
+            this.pictureBox4.TabStop = false;
             // 
-            // dtpNgay
+            // pictureBox3
             // 
-            this.dtpNgay.Location = new System.Drawing.Point(137, 209);
-            this.dtpNgay.Name = "dtpNgay";
-            this.dtpNgay.Size = new System.Drawing.Size(166, 20);
-            this.dtpNgay.TabIndex = 39;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Image = global::Quanlyquancafe.Properties.Resources.f872aeed068846e39664a6d2701abc74;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(125, 123);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 43;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Image = global::Quanlyquancafe.Properties.Resources._6be6fbb8b635e1afac35db92847ded2b;
+            this.pictureBox2.Location = new System.Drawing.Point(211, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(120, 123);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 42;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::Quanlyquancafe.Properties.Resources._97d2a715a19419fa4bc0d1a61c583b0d;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 372);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(125, 153);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtIDMon
+            // 
+            this.txtIDMon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIDMon.Location = new System.Drawing.Point(137, 255);
+            this.txtIDMon.Multiline = true;
+            this.txtIDMon.Name = "txtIDMon";
+            this.txtIDMon.Size = new System.Drawing.Size(166, 26);
+            this.txtIDMon.TabIndex = 40;
             // 
             // txtIDThucDon
             // 
@@ -305,121 +419,9 @@
             this.label6.Location = new System.Drawing.Point(31, 263);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 18);
+            this.label6.Size = new System.Drawing.Size(63, 18);
             this.label6.TabIndex = 38;
-            this.label6.Text = "Tên Món";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Image = global::Quanlyquancafe.Properties.Resources.cc039f6796219e5ac01148ff24bb3c0b1;
-            this.pictureBox4.Location = new System.Drawing.Point(211, 372);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(120, 153);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 44;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Image = global::Quanlyquancafe.Properties.Resources.f872aeed068846e39664a6d2701abc74;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(125, 123);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 43;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = global::Quanlyquancafe.Properties.Resources._6be6fbb8b635e1afac35db92847ded2b;
-            this.pictureBox2.Location = new System.Drawing.Point(211, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(120, 123);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 42;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::Quanlyquancafe.Properties.Resources._97d2a715a19419fa4bc0d1a61c583b0d;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 372);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(125, 153);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 41;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnTimMenu
-            // 
-            this.btnTimMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
-            this.btnTimMenu.FlatAppearance.BorderSize = 0;
-            this.btnTimMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimMenu.ForeColor = System.Drawing.Color.White;
-            this.btnTimMenu.Image = global::Quanlyquancafe.Properties.Resources.search__1_;
-            this.btnTimMenu.Location = new System.Drawing.Point(166, 14);
-            this.btnTimMenu.Name = "btnTimMenu";
-            this.btnTimMenu.Size = new System.Drawing.Size(66, 43);
-            this.btnTimMenu.TabIndex = 14;
-            this.btnTimMenu.Text = "Tìm Kiếm";
-            this.btnTimMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnTimMenu.UseVisualStyleBackColor = false;
-            this.btnTimMenu.Click += new System.EventHandler(this.btnTimMenu_Click);
-            // 
-            // btnxoamenu
-            // 
-            this.btnxoamenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
-            this.btnxoamenu.FlatAppearance.BorderSize = 0;
-            this.btnxoamenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnxoamenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxoamenu.ForeColor = System.Drawing.Color.White;
-            this.btnxoamenu.Image = global::Quanlyquancafe.Properties.Resources.delete;
-            this.btnxoamenu.Location = new System.Drawing.Point(479, 14);
-            this.btnxoamenu.Name = "btnxoamenu";
-            this.btnxoamenu.Size = new System.Drawing.Size(66, 43);
-            this.btnxoamenu.TabIndex = 13;
-            this.btnxoamenu.Text = "Xóa";
-            this.btnxoamenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnxoamenu.UseVisualStyleBackColor = false;
-            this.btnxoamenu.Click += new System.EventHandler(this.btnxoamenu_Click);
-            // 
-            // btnsuamenu
-            // 
-            this.btnsuamenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
-            this.btnsuamenu.FlatAppearance.BorderSize = 0;
-            this.btnsuamenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnsuamenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsuamenu.ForeColor = System.Drawing.Color.White;
-            this.btnsuamenu.Image = global::Quanlyquancafe.Properties.Resources.changes;
-            this.btnsuamenu.Location = new System.Drawing.Point(375, 14);
-            this.btnsuamenu.Name = "btnsuamenu";
-            this.btnsuamenu.Size = new System.Drawing.Size(66, 43);
-            this.btnsuamenu.TabIndex = 12;
-            this.btnsuamenu.Text = "Sửa";
-            this.btnsuamenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnsuamenu.UseVisualStyleBackColor = false;
-            this.btnsuamenu.Click += new System.EventHandler(this.btnsuamenu_Click);
-            // 
-            // btnthemmenu
-            // 
-            this.btnthemmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
-            this.btnthemmenu.FlatAppearance.BorderSize = 0;
-            this.btnthemmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnthemmenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnthemmenu.ForeColor = System.Drawing.Color.White;
-            this.btnthemmenu.Image = global::Quanlyquancafe.Properties.Resources.add__1_;
-            this.btnthemmenu.Location = new System.Drawing.Point(271, 14);
-            this.btnthemmenu.Name = "btnthemmenu";
-            this.btnthemmenu.Size = new System.Drawing.Size(66, 43);
-            this.btnthemmenu.TabIndex = 11;
-            this.btnthemmenu.Text = "Thêm ";
-            this.btnthemmenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnthemmenu.UseVisualStyleBackColor = false;
-            this.btnthemmenu.Click += new System.EventHandler(this.btnthemmenu_Click);
+            this.label6.Text = "Mã món";
             // 
             // UCMenu
             // 
@@ -440,11 +442,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -466,8 +468,7 @@
         private System.Windows.Forms.Button btnxoamenu;
         private System.Windows.Forms.Button btnsuamenu;
         private System.Windows.Forms.Button btnthemmenu;
-        private System.Windows.Forms.TextBox txtTenMon;
-        private System.Windows.Forms.DateTimePicker dtpNgay;
+        private System.Windows.Forms.TextBox txtIDMon;
         private System.Windows.Forms.TextBox txtIDThucDon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numSoLuong;
@@ -478,5 +479,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MaskedTextBox mtbNgayThem;
     }
 }

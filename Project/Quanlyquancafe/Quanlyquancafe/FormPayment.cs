@@ -24,10 +24,10 @@ namespace Quanlyquancafe
         public string PaymentMethod; // Phương thức thanh toán
 
         private bool isPrinted = false; // Biến kiểm tra đã in hay chưa
-        public decimal DiscountAmount = 0; // Biến lưu số tiền giảm giá
+        public decimal DiscountAmount ; // Biến lưu số tiền giảm giá
 
         private PrintDocument printDocument = new PrintDocument();
-        public FormPayment(decimal totalAmount, int tableId, DateTime dateCheckIn, DateTime dateCheckOut, decimal discountAmount)
+        public FormPayment(decimal totalAmount, int tableId, DateTime dateCheckIn, DateTime dateCheckOut, decimal discountValue)
         {
             InitializeComponent();
             TotalAmount = totalAmount;
@@ -35,12 +35,11 @@ namespace Quanlyquancafe
             this.tableId = tableId;
             this.dateCheckIn = dateCheckIn;
             this.dateCheckOut = dateCheckOut;
-            lblGiamGia.Text = DiscountAmount.ToString("N0") + " %";
 
-            printDocument.PrintPage += PrintDocument_PrintPage;
+            printDocument.PrintPage += PrintDocument_PrintPage;  // in hóa đơn
 
-            lblNgayCheckIn.Text = dateCheckIn.ToString("dd/MM/yyyy HH:mm:ss");
-            lblNgayXuat.Text = dateCheckOut.ToString("dd/MM/yyyy HH:mm:ss"); // Hiển thị ngày xuất hóa đơn
+            lblNgayCheckIn.Text = dateCheckIn.ToString("dd/MM/yyyy ");
+            lblNgayXuat.Text = dateCheckOut.ToString("dd/MM/yyyy "); // Hiển thị ngày xuất hóa đơn
 
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
 
@@ -51,8 +50,12 @@ namespace Quanlyquancafe
             // Thêm phương thức thanh toán vào ComboBox khi Form được load
             cbbPhuongThuc.Items.Add("Thanh toán tiền mặt");
             cbbPhuongThuc.Items.Add("Chuyển khoản");
+
+            DiscountAmount = UCHome.DiscountValue; // Lấy giá trị từ biến tĩnh
+            lblGiamGia.Text = DiscountAmount.ToString("N0") + " %"; // Hiển thị giảm giá
         }
 
+     
         private void LoadBill(int tableId)
         {
             try
@@ -84,12 +87,12 @@ namespace Quanlyquancafe
                         object totalAfterDiscountValue = billTable.Rows[0]["TongTienSauGiam"];
 
                         lblNgayCheckIn.Text = dateCheckInValue != DBNull.Value
-                            ? Convert.ToDateTime(dateCheckInValue).ToString("dd/MM/yyyy HH:mm:ss")
+                            ? Convert.ToDateTime(dateCheckInValue).ToString("dd/MM/yyyy ")
                             : "Không có dữ liệu";
 
                         lblNgayXuat.Text = dateCheckOutValue != DBNull.Value
-                            ? Convert.ToDateTime(dateCheckOutValue).ToString("dd/MM/yyyy HH:mm:ss")
-                            : DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                            ? Convert.ToDateTime(dateCheckOutValue).ToString("dd/MM/yyyy ")
+                            : DateTime.Now.ToString("dd/MM/yyyy ");
 
                         // Nếu có giảm giá thì lấy giá trị giảm giá
                         DiscountAmount = discountValue != DBNull.Value ? Convert.ToDecimal(discountValue) : 0;
@@ -106,8 +109,11 @@ namespace Quanlyquancafe
                         }
 
                         // Áp dụng giảm giá
-                        TotalAmount = total - DiscountAmount;
-                        txtTotal.Text = TotalAmount.ToString("N0") + " VND";
+                        decimal discountMoney = total * (DiscountAmount / 100) ; // Tính số tiền giảm
+                        TotalAmount = total - discountMoney;
+
+                        txtTotal.Text = total.ToString("N0") + " VND";
+                        txtSauGiam.Text = TotalAmount.ToString("N0") + " VND";
                     }
                     else
                     {
@@ -188,7 +194,7 @@ namespace Quanlyquancafe
                 yPos += 10;
 
                 // In tổng tiền
-                g.DrawString($"Giảm giá: {DiscountAmount.ToString("N0")} VND", font, Brushes.Black, leftMargin, yPos);
+                g.DrawString($"Giảm giá: {DiscountAmount.ToString("N0")}%", font, Brushes.Black, leftMargin, yPos);
                 yPos += 25;
                 g.DrawString($"Tổng tiền: {TotalAmount.ToString("N0")} VND", boldFont, Brushes.Black, leftMargin, yPos);
                 yPos += 30;
