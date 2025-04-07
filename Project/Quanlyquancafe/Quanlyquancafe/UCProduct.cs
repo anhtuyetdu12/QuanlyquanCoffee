@@ -25,7 +25,7 @@ namespace Quanlyquancafe
         {
             db = new Database();
             LoadFood();
-            LoadDanhMuc();
+            LoadDanhMuccbb();
             dgvFood.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
             dgvFood.Columns[1].HeaderText = "Tên món";
@@ -34,17 +34,17 @@ namespace Quanlyquancafe
             dgvFood.Columns[2].HeaderText = "Giá";
             dgvFood.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            dgvFood.Columns[3].HeaderText = "Mã danh mục";
+            dgvFood.Columns[3].HeaderText = "Tên danh mục";
             dgvFood.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            dgvFood.Columns[4].HeaderText = "Tên danh mục";
+            dgvFood.Columns[4].HeaderText = "Số lượng";
             dgvFood.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            dgvFood.Columns[5].HeaderText = "Số lượng";
+            dgvFood.Columns[5].HeaderText = "Ngày thêm";
             dgvFood.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            dgvFood.Columns[6].HeaderText = "Ngày thêm";
-            dgvFood.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+          //  dgvFood.Columns[6].HeaderText = "Ngày thêm";
+         //   dgvFood.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dgvFood.DefaultCellStyle.ForeColor = Color.Black;
         }
@@ -63,12 +63,12 @@ namespace Quanlyquancafe
             var dt = db.SelectData("[LoadFood]", lstPra);
             dgvFood.DataSource = dt;
         }
-        public void LoadDanhMuc()
+        public void LoadDanhMuccbb()
         {
             var dt = db.SelectData("selectDanhMuc"); // Gọi stored procedure hoặc query để lấy danh mục
             cbbDanhMuc.DataSource = dt;
-            cbbDanhMuc.DisplayMember = "Tên danh mục"; // Cột chứa tên danh mục
-            cbbDanhMuc.ValueMember = "ID"; // Cột chứa ID danh mục
+            cbbDanhMuc.DisplayMember = "name"; // Cột chứa tên danh mục
+            cbbDanhMuc.ValueMember = "id"; // Cột chứa ID danh mục
         }
 
         private void btnTimFood_Click(object sender, EventArgs e)
@@ -246,8 +246,9 @@ namespace Quanlyquancafe
                         numGia.Value = 0;
                     }
                 }
-                cbbDanhMuc.SelectedValue = dgvFood.Rows[e.RowIndex].Cells[3].Value;
-
+               
+               
+                cbbDanhMuc.Text = dgvFood.Rows[e.RowIndex].Cells[3].Value.ToString();
             }
         }
     }

@@ -41,10 +41,12 @@
             // 
             // dgvBill
             // 
+            this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBill.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
             this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBill.Location = new System.Drawing.Point(3, 3);
+            this.dgvBill.Location = new System.Drawing.Point(2, 6);
             this.dgvBill.Name = "dgvBill";
+            this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBill.Size = new System.Drawing.Size(867, 532);
             this.dgvBill.TabIndex = 0;
             // 
@@ -74,6 +76,7 @@
             this.btnThongke.Text = "Thống kê";
             this.btnThongke.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThongke.UseVisualStyleBackColor = false;
+            this.btnThongke.Click += new System.EventHandler(this.btnThongke_Click);
             // 
             // dtpKetThuc
             // 
@@ -84,7 +87,7 @@
             // 
             // dtpBatDau
             // 
-            this.dtpBatDau.Location = new System.Drawing.Point(71, 15);
+            this.dtpBatDau.Location = new System.Drawing.Point(71, 16);
             this.dtpBatDau.Name = "dtpBatDau";
             this.dtpBatDau.Size = new System.Drawing.Size(190, 20);
             this.dtpBatDau.TabIndex = 0;
@@ -106,6 +109,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UCBill";
             this.Size = new System.Drawing.Size(874, 591);
+            this.Load += new System.EventHandler(this.UCBill_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

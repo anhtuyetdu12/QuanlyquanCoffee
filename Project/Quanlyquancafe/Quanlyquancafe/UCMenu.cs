@@ -25,7 +25,7 @@ namespace Quanlyquancafe
             db = new Database();
 
             LoadMenu();
-
+            LoadFoodcbb();
             dgvMenu.Columns[1].HeaderText = "Ngày thêm";
             dgvMenu.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
@@ -34,6 +34,9 @@ namespace Quanlyquancafe
 
             dgvMenu.Columns[3].HeaderText = "Mã món";
             dgvMenu.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            dgvMenu.Columns[4].HeaderText = "Tên món";
+            dgvMenu.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dgvMenu.DefaultCellStyle.ForeColor = Color.Black;
         }
@@ -52,6 +55,13 @@ namespace Quanlyquancafe
             var dt = db.SelectData("[LoadMenu]", lstPra);
             dgvMenu.DataSource = dt;
         }
+        public void LoadFoodcbb()
+        {
+            var dt = db.SelectData("selectMonAn"); // Gọi stored procedure hoặc query để lấy danh mục
+            cbbMon.DataSource = dt;
+            cbbMon.DisplayMember = "name"; // Cột chứa tên danh mục
+            cbbMon.ValueMember = "id"; // Cột chứa ID danh mục
+        }
 
         private void btnTimMenu_Click(object sender, EventArgs e)
         {
@@ -60,9 +70,10 @@ namespace Quanlyquancafe
 
         private void btnthemmenu_Click(object sender, EventArgs e)
         {
-            if (txtIDMon.Text.Trim().Length == 0)
+            
+            if (cbbMon.SelectedIndex < 0)
             {
-                MessageBox.Show("Vui lòng nhập mã món", "Ràng buộc dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn tên món", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (numSoLuong.Value <= 0)
@@ -89,7 +100,7 @@ namespace Quanlyquancafe
                 new CustomParameter
                 {
                     key = "@maMon",
-                    value = txtIDMon.Text
+                    value = cbbMon.SelectedValue.ToString()
                 },
                 new CustomParameter
                 {
@@ -103,7 +114,7 @@ namespace Quanlyquancafe
                 MessageBox.Show("Thêm mới menu thành công!", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadMenu();
                 dgvMenu.Refresh();
-                txtIDMon.Text = null;
+                cbbMon.SelectedIndex = 0;
                 numSoLuong.Value = 0;
                
             }
@@ -118,9 +129,9 @@ namespace Quanlyquancafe
                 MessageBox.Show("Vui lòng chọn menu cần cập nhật", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (txtIDMon.Text.Trim().Length == 0)
+            if (cbbMon.SelectedIndex < 0)
             {
-                MessageBox.Show("Vui lòng nhập mã món", "Ràng buộc dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn tên món", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (numSoLuong.Value <= 0)
@@ -151,7 +162,7 @@ namespace Quanlyquancafe
                 new CustomParameter
                 {
                     key = "@maMon",
-                    value = txtIDMon.Text
+                    value = cbbMon.SelectedValue.ToString()
                 },
                 new CustomParameter
                 {
@@ -164,7 +175,7 @@ namespace Quanlyquancafe
                 MessageBox.Show("Cập nhật menu thành công!", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadMenu();
                 dgvMenu.Refresh();
-                txtIDMon.Text = null;
+                cbbMon.SelectedIndex = 0;
                 numSoLuong.Value = 0;
                 id = -1;
 
@@ -196,7 +207,7 @@ namespace Quanlyquancafe
                     MessageBox.Show("Xóa menu thành công!", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadMenu();
                     dgvMenu.Refresh();
-                    txtIDMon.Text = null;
+                    cbbMon.SelectedIndex = 0;
                     numSoLuong.Value = 0;
                     id = -1;
                 }
@@ -235,9 +246,8 @@ namespace Quanlyquancafe
                         numSoLuong.Value = 0; 
                     }
                 }
-                txtIDMon.Text = dgvMenu.Rows[e.RowIndex].Cells[3].Value.ToString();
-
-
+               
+                cbbMon.Text = dgvMenu.Rows[e.RowIndex].Cells[4].Value.ToString();
             }
         }
     }

@@ -3,28 +3,36 @@
   "WorkspaceRootPath": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\quanlyquancafe\\formpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|d:\\danangarchitectureuniversity\\doancncnpm\\project\\quanlyquancafe\\quanlyquancafe\\ucproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\ucproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|d:\\danangarchitectureuniversity\\doancncnpm\\project\\quanlyquancafe\\quanlyquancafe\\ucmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\ucmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|d:\\danangarchitectureuniversity\\doancncnpm\\project\\quanlyquancafe\\quanlyquancafe\\ucmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\ucmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|d:\\danangarchitectureuniversity\\doancncnpm\\project\\quanlyquancafe\\quanlyquancafe\\ucproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\ucproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|d:\\danangarchitectureuniversity\\doancncnpm\\project\\quanlyquancafe\\quanlyquancafe\\formpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\formpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|d:\\danangarchitectureuniversity\\doancncnpm\\project\\quanlyquancafe\\quanlyquancafe\\uchome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\quanlyquancafe\\uchome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\uchome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|d:\\danangarchitectureuniversity\\doancncnpm\\project\\quanlyquancafe\\quanlyquancafe\\formpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\formpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\quanlyquancafe\\uchome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\uchome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|d:\\danangarchitectureuniversity\\doancncnpm\\project\\quanlyquancafe\\quanlyquancafe\\ucbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\ucbill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|d:\\danangarchitectureuniversity\\doancncnpm\\project\\quanlyquancafe\\quanlyquancafe\\ucstatistic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\ucstatistic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\quanlyquancafe\\formpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21D081B0-8C96-449F-9DE8-4E31CB3426C4}|Quanlyquancafe\\Quanlyquancafe.csproj|solutionrelative:quanlyquancafe\\formpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 318,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,31 +62,70 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UCBill.cs [Design]",
-              "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCBill.cs",
-              "RelativeDocumentMoniker": "Quanlyquancafe\\UCBill.cs",
-              "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCBill.cs [Design]",
-              "RelativeToolTip": "Quanlyquancafe\\UCBill.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "UCProduct.cs",
+              "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCProduct.cs",
+              "RelativeDocumentMoniker": "Quanlyquancafe\\UCProduct.cs",
+              "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCProduct.cs",
+              "RelativeToolTip": "Quanlyquancafe\\UCProduct.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAIwDcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T13:37:06.168Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UCStatistic.cs [Design]",
-              "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCStatistic.cs",
-              "RelativeDocumentMoniker": "Quanlyquancafe\\UCStatistic.cs",
-              "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCStatistic.cs [Design]",
-              "RelativeToolTip": "Quanlyquancafe\\UCStatistic.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T13:37:03.505Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-07T04:16:33.788Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "UCProduct.cs [Design]",
+              "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCProduct.cs",
+              "RelativeDocumentMoniker": "Quanlyquancafe\\UCProduct.cs",
+              "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCProduct.cs [Design]",
+              "RelativeToolTip": "Quanlyquancafe\\UCProduct.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T04:16:32.284Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UCMenu.cs",
+              "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCMenu.cs",
+              "RelativeDocumentMoniker": "Quanlyquancafe\\UCMenu.cs",
+              "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCMenu.cs",
+              "RelativeToolTip": "Quanlyquancafe\\UCMenu.cs",
+              "ViewState": "AQIAANIAAAAAAAAAAAAkwO8AAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T04:02:49.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UCMenu.cs [Design]",
+              "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCMenu.cs",
+              "RelativeDocumentMoniker": "Quanlyquancafe\\UCMenu.cs",
+              "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCMenu.cs [Design]",
+              "RelativeToolTip": "Quanlyquancafe\\UCMenu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T04:02:29.19Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormPayment.cs",
+              "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\FormPayment.cs",
+              "RelativeDocumentMoniker": "Quanlyquancafe\\FormPayment.cs",
+              "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\FormPayment.cs",
+              "RelativeToolTip": "Quanlyquancafe\\FormPayment.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAUwDoAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T14:40:00.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "UCHome.cs [Design]",
               "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCHome.cs",
               "RelativeDocumentMoniker": "Quanlyquancafe\\UCHome.cs",
@@ -90,41 +137,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "UCHome.cs",
               "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCHome.cs",
               "RelativeDocumentMoniker": "Quanlyquancafe\\UCHome.cs",
               "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\UCHome.cs",
               "RelativeToolTip": "Quanlyquancafe\\UCHome.cs",
-              "ViewState": "AQIAADEBAAAAAAAAAAASwEUBAAAAAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAUwIwAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-20T12:58:42.828Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormPayment.cs",
-              "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\FormPayment.cs",
-              "RelativeDocumentMoniker": "Quanlyquancafe\\FormPayment.cs",
-              "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\FormPayment.cs",
-              "RelativeToolTip": "Quanlyquancafe\\FormPayment.cs",
-              "ViewState": "AQIAAIMAAAAAAAAAAAAcwAYBAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T14:40:00.977Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "FormPayment.cs [Design]",
               "DocumentMoniker": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\FormPayment.cs",
               "RelativeDocumentMoniker": "Quanlyquancafe\\FormPayment.cs",
               "ToolTip": "D:\\DanangArchitectureUniversity\\DoAnCNCNPM\\Project\\Quanlyquancafe\\Quanlyquancafe\\FormPayment.cs [Design]",
               "RelativeToolTip": "Quanlyquancafe\\FormPayment.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T13:53:36.425Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-01T13:53:36.425Z"
             }
           ]
         }

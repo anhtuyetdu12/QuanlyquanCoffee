@@ -49,13 +49,13 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtIDMon = new System.Windows.Forms.TextBox();
             this.txtIDThucDon = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.numSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.cbbMon = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -275,12 +275,12 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(41)))), ((int)(((byte)(35)))));
+            this.panel4.Controls.Add(this.cbbMon);
             this.panel4.Controls.Add(this.mtbNgayThem);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.txtIDMon);
             this.panel4.Controls.Add(this.txtIDThucDon);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.numSoLuong);
@@ -344,15 +344,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtIDMon
-            // 
-            this.txtIDMon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIDMon.Location = new System.Drawing.Point(137, 255);
-            this.txtIDMon.Multiline = true;
-            this.txtIDMon.Name = "txtIDMon";
-            this.txtIDMon.Size = new System.Drawing.Size(166, 26);
-            this.txtIDMon.TabIndex = 40;
             // 
             // txtIDThucDon
             // 
@@ -419,9 +410,17 @@
             this.label6.Location = new System.Drawing.Point(31, 263);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 18);
+            this.label6.Size = new System.Drawing.Size(67, 18);
             this.label6.TabIndex = 38;
-            this.label6.Text = "Mã món";
+            this.label6.Text = "Tên món";
+            // 
+            // cbbMon
+            // 
+            this.cbbMon.FormattingEnabled = true;
+            this.cbbMon.Location = new System.Drawing.Point(137, 258);
+            this.cbbMon.Name = "cbbMon";
+            this.cbbMon.Size = new System.Drawing.Size(166, 21);
+            this.cbbMon.TabIndex = 46;
             // 
             // UCMenu
             // 
@@ -468,7 +467,6 @@
         private System.Windows.Forms.Button btnxoamenu;
         private System.Windows.Forms.Button btnsuamenu;
         private System.Windows.Forms.Button btnthemmenu;
-        private System.Windows.Forms.TextBox txtIDMon;
         private System.Windows.Forms.TextBox txtIDThucDon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numSoLuong;
@@ -480,5 +478,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MaskedTextBox mtbNgayThem;
+        private System.Windows.Forms.ComboBox cbbMon;
     }
 }

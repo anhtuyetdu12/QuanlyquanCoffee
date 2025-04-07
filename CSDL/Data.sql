@@ -810,8 +810,25 @@ end
 update dbo.TableFood set status = N'Trống'
 
 
-delete dbo.Bill
+select * from dbo.Bill
+select * from dbo.BillInfo
 
 -- tạo proc để lấy ra thông tin thống kê hóa đơn
+alter proc USP_GetListBillByDate
+	@checkIn date,
+	@checkOut date
+as
+begin
+	select t.name as [Tên bàn], b.totalPrice as [Tổng tiền] , dateCheckIn as [Ngày vào] , dateCheckOut as [Ngày ra], discount as [Giảm giá]
+	from dbo.Bill as b, dbo.TableFood as t
+	where dateCheckIn >= @checkIn and dateCheckOut <= @checkOut and b.status = 1
+	and t.id = b.idTable
+end
 
-
+-- load món
+create proc selectMonAn
+as
+begin
+    select * from dbo.Food
+end
+-- phân trang cho bill

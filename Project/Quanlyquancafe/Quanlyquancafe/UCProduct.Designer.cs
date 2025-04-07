@@ -38,7 +38,6 @@
             this.btnthemfood = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lbMenu = new System.Windows.Forms.ListBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -46,7 +45,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtIDMon = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.numGia = new System.Windows.Forms.NumericUpDown();
@@ -74,7 +72,7 @@
             this.panel1.Controls.Add(this.dgvFood);
             this.panel1.Location = new System.Drawing.Point(0, 71);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(547, 517);
+            this.panel1.Size = new System.Drawing.Size(569, 517);
             this.panel1.TabIndex = 0;
             // 
             // dgvFood
@@ -83,7 +81,8 @@
             this.dgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFood.Location = new System.Drawing.Point(-23, 1);
             this.dgvFood.Name = "dgvFood";
-            this.dgvFood.Size = new System.Drawing.Size(569, 520);
+            this.dgvFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFood.Size = new System.Drawing.Size(589, 520);
             this.dgvFood.TabIndex = 0;
             this.dgvFood.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFood_CellClick);
             // 
@@ -117,7 +116,7 @@
             this.btnTimFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimFood.ForeColor = System.Drawing.Color.White;
             this.btnTimFood.Image = global::Quanlyquancafe.Properties.Resources.search__1_;
-            this.btnTimFood.Location = new System.Drawing.Point(168, 13);
+            this.btnTimFood.Location = new System.Drawing.Point(170, 13);
             this.btnTimFood.Name = "btnTimFood";
             this.btnTimFood.Size = new System.Drawing.Size(66, 43);
             this.btnTimFood.TabIndex = 19;
@@ -134,7 +133,7 @@
             this.btnxoafood.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnxoafood.ForeColor = System.Drawing.Color.White;
             this.btnxoafood.Image = global::Quanlyquancafe.Properties.Resources.delete;
-            this.btnxoafood.Location = new System.Drawing.Point(481, 13);
+            this.btnxoafood.Location = new System.Drawing.Point(497, 13);
             this.btnxoafood.Name = "btnxoafood";
             this.btnxoafood.Size = new System.Drawing.Size(66, 43);
             this.btnxoafood.TabIndex = 18;
@@ -151,7 +150,7 @@
             this.btnsuafood.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsuafood.ForeColor = System.Drawing.Color.White;
             this.btnsuafood.Image = global::Quanlyquancafe.Properties.Resources.changes;
-            this.btnsuafood.Location = new System.Drawing.Point(377, 13);
+            this.btnsuafood.Location = new System.Drawing.Point(386, 13);
             this.btnsuafood.Name = "btnsuafood";
             this.btnsuafood.Size = new System.Drawing.Size(66, 43);
             this.btnsuafood.TabIndex = 17;
@@ -168,7 +167,7 @@
             this.btnthemfood.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnthemfood.ForeColor = System.Drawing.Color.White;
             this.btnthemfood.Image = global::Quanlyquancafe.Properties.Resources.add__1_;
-            this.btnthemfood.Location = new System.Drawing.Point(273, 13);
+            this.btnthemfood.Location = new System.Drawing.Point(279, 13);
             this.btnthemfood.Name = "btnthemfood";
             this.btnthemfood.Size = new System.Drawing.Size(66, 43);
             this.btnthemfood.TabIndex = 16;
@@ -191,7 +190,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
-            this.panel3.Controls.Add(this.lbMenu);
             this.panel3.Controls.Add(this.pictureBox7);
             this.panel3.Controls.Add(this.pictureBox6);
             this.panel3.Controls.Add(this.pictureBox5);
@@ -199,7 +197,6 @@
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.txtIDMon);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.numGia);
@@ -208,18 +205,10 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(550, 74);
+            this.panel3.Location = new System.Drawing.Point(569, 74);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(321, 517);
+            this.panel3.Size = new System.Drawing.Size(302, 517);
             this.panel3.TabIndex = 2;
-            // 
-            // lbMenu
-            // 
-            this.lbMenu.FormattingEnabled = true;
-            this.lbMenu.Location = new System.Drawing.Point(126, 216);
-            this.lbMenu.Name = "lbMenu";
-            this.lbMenu.Size = new System.Drawing.Size(167, 69);
-            this.lbMenu.TabIndex = 33;
             // 
             // pictureBox7
             // 
@@ -298,18 +287,6 @@
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-            this.label6.Location = new System.Drawing.Point(16, 228);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 18);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Thực Đơn";
-            // 
             // txtIDMon
             // 
             this.txtIDMon.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -324,7 +301,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-            this.label5.Location = new System.Drawing.Point(19, 124);
+            this.label5.Location = new System.Drawing.Point(27, 124);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(22, 18);
@@ -333,7 +310,7 @@
             // 
             // numGia
             // 
-            this.numGia.Location = new System.Drawing.Point(126, 354);
+            this.numGia.Location = new System.Drawing.Point(123, 290);
             this.numGia.Maximum = new decimal(new int[] {
             1215752192,
             23,
@@ -346,7 +323,7 @@
             // cbbDanhMuc
             // 
             this.cbbDanhMuc.FormattingEnabled = true;
-            this.cbbDanhMuc.Location = new System.Drawing.Point(126, 300);
+            this.cbbDanhMuc.Location = new System.Drawing.Point(126, 234);
             this.cbbDanhMuc.Name = "cbbDanhMuc";
             this.cbbDanhMuc.Size = new System.Drawing.Size(167, 21);
             this.cbbDanhMuc.TabIndex = 20;
@@ -354,7 +331,7 @@
             // txtTenMon
             // 
             this.txtTenMon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTenMon.Location = new System.Drawing.Point(126, 173);
+            this.txtTenMon.Location = new System.Drawing.Point(126, 176);
             this.txtTenMon.Multiline = true;
             this.txtTenMon.Name = "txtTenMon";
             this.txtTenMon.Size = new System.Drawing.Size(167, 26);
@@ -365,7 +342,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-            this.label4.Location = new System.Drawing.Point(19, 355);
+            this.label4.Location = new System.Drawing.Point(21, 291);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 18);
@@ -377,7 +354,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-            this.label3.Location = new System.Drawing.Point(16, 303);
+            this.label3.Location = new System.Drawing.Point(22, 237);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 18);
@@ -389,7 +366,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-            this.label2.Location = new System.Drawing.Point(16, 176);
+            this.label2.Location = new System.Drawing.Point(24, 179);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 18);
@@ -437,7 +414,6 @@
         private System.Windows.Forms.Button btnxoafood;
         private System.Windows.Forms.Button btnsuafood;
         private System.Windows.Forms.Button btnthemfood;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtIDMon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numGia;
@@ -453,6 +429,5 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.ListBox lbMenu;
     }
 }
