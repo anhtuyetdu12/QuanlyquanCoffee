@@ -888,7 +888,21 @@ BEGIN
 END;
 
 
+UPDATE Receipt
+SET DiscountAmount = 0;
 
 
-
-
+alter PROCEDURE USP_InsertReceipt
+    @idBillTD INT,
+    @method NVARCHAR(50),
+    @paymentDate DATE,
+    @discount int,
+    @totalAmount FLOAT,
+    @discountAmount FLOAT,
+    @changeMoney FLOAT,
+    @guestMoney FLOAT
+AS
+BEGIN
+    INSERT INTO Receipt ( idBillTD,method,paymentDate, discount,  totalAmount,  discountAmount,   changeMoney,  guestMoney )
+    VALUES ( @idBillTD, @method,@paymentDate,@discount, @totalAmount, @discountAmount, @changeMoney,@guestMoney )
+END

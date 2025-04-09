@@ -95,10 +95,10 @@ namespace Quanlyquancafe
                             : DateTime.Now.ToString("dd/MM/yyyy ");
 
                         // Nếu có giảm giá thì lấy giá trị giảm giá
-                        DiscountAmount = discountValue != DBNull.Value ? Convert.ToDecimal(discountValue) : 0;
+                        DiscountAmount = UCHome.DiscountValue;
 
                         // Hiển thị giảm giá trên giao diện
-                        lblGiamGia.Text = DiscountAmount.ToString("N0") + " %";
+                         lblGiamGia.Text = DiscountAmount.ToString("N0") + " %";
 
 
                         // Tính tổng tiền từ bảng danh sách món ăn
@@ -168,12 +168,14 @@ namespace Quanlyquancafe
                 float col2 = col1 + 200;         // Cột "Số lượng"
                 float col3 = col2 + 80;          // Cột "Đơn giá"
                 float col4 = col3 + 100;         // Cột "Thành tiền"
+                float col5 = col4 + 150;         // Cột "Thành tiền"
 
                 // In tiêu đề cột
                 g.DrawString("Tên món", boldFont, Brushes.Black, col1, yPos);
                 g.DrawString("SL", boldFont, Brushes.Black, col2, yPos);
                 g.DrawString("Đơn giá", boldFont, Brushes.Black, col3, yPos);
                 g.DrawString("Thành tiền", boldFont, Brushes.Black, col4, yPos);
+                g.DrawString("Ghi chú", boldFont, Brushes.Black, col5, yPos);
                 yPos += 20;
 
                 g.DrawLine(Pens.Black, leftMargin, yPos, e.MarginBounds.Right, yPos);
@@ -186,6 +188,7 @@ namespace Quanlyquancafe
                     g.DrawString(row["SoLuong"].ToString(), font, Brushes.Black, col2, yPos);
                     g.DrawString(row["DonGia"].ToString(), font, Brushes.Black, col3, yPos);
                     g.DrawString(row["ThanhTien"].ToString(), font, Brushes.Black, col4, yPos);
+                    g.DrawString(row["GhiChu"].ToString(), font, Brushes.Black, col5, yPos);
                     yPos += 20;
                 }
 
@@ -233,16 +236,27 @@ namespace Quanlyquancafe
                 Database db = new Database();
                 string query = "USP_InsertReceipt"; // Tên stored procedure đã tạo
 
+
+                // Tính tổng tiền từ bảng danh sách món ăn
+                decimal total = 0;
+                foreach (DataRow row in billItemsTable.Rows)
+                {
+                    total += Convert.ToDecimal(row["ThanhTien"]);
+                }
+
                 // Tính số tiền trả lại
-                decimal changeMoney = customerMoney - TotalAmount + DiscountAmount;
+                decimal discountMoney = total * (DiscountAmount / 100); // Tính số tiền giảm
+                TotalAmount = total - discountMoney;   /// tổng tiền sau giảm
+
+                decimal changeMoney = customerMoney - TotalAmount ; // tiền thối
 
                 List<CustomParameter> parameters = new List<CustomParameter>()
                 {
                     new CustomParameter{ key = "@method", value = cbbPhuongThuc.SelectedItem.ToString() },
                     new CustomParameter{ key = "@paymentDate", value = DateTime.Now.ToString("yyyy-MM-dd") },
                     new CustomParameter{ key = "@discount", value = Math.Round(DiscountAmount).ToString()  }, // % giảm giá nếu có, ví dụ 10 (tức 10%)
-                    new CustomParameter{ key = "@totalAmount", value = TotalAmount.ToString() },
-                    new CustomParameter{ key = "@discountAmount", value = DiscountAmount.ToString() },
+                    new CustomParameter{ key = "@totalAmount", value = total.ToString() },
+                    new CustomParameter{ key = "@discountAmount", value = TotalAmount.ToString() },
                     new CustomParameter{ key = "@changeMoney", value = changeMoney.ToString() },
                     new CustomParameter{ key = "@guestMoney", value = customerMoney.ToString() }
                 };
@@ -265,9 +279,10 @@ namespace Quanlyquancafe
                 return;
             }
 
-            CustomerMoney = customerMoney;
-            ChangeMoney = customerMoney - TotalAmount + DiscountAmount;
-            PaymentMethod = cbbPhuongThuc.SelectedItem.ToString();
+          ///  CustomerMoney = customerMoney;  // tiền khách đưa
+           // ChangeMoney = customerMoney - TotalAmount ;
+
+            PaymentMethod = cbbPhuongThuc.SelectedItem.ToString(); // chọn phương thức
 
 
 

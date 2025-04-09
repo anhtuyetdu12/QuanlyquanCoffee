@@ -52,6 +52,9 @@
             this.btnThemMon = new System.Windows.Forms.Button();
             this.cbbMonAn = new System.Windows.Forms.ComboBox();
             this.cbbDanhMuc = new System.Windows.Forms.ComboBox();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtNote = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmGiamGia)).BeginInit();
@@ -84,7 +87,8 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.lvBill.GridLines = true;
             this.lvBill.HideSelection = false;
             this.lvBill.Location = new System.Drawing.Point(0, 0);
@@ -112,11 +116,13 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Thành tiền";
-            this.columnHeader4.Width = 140;
+            this.columnHeader4.Width = 100;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(94)))));
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.txtNote);
             this.panel2.Controls.Add(this.btnGiamGia);
             this.panel2.Controls.Add(this.btnChuyenBan);
             this.panel2.Controls.Add(this.cbbChuyenBan);
@@ -137,9 +143,9 @@
             this.btnGiamGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGiamGia.ForeColor = System.Drawing.Color.White;
-            this.btnGiamGia.Location = new System.Drawing.Point(129, 9);
+            this.btnGiamGia.Location = new System.Drawing.Point(111, 9);
             this.btnGiamGia.Name = "btnGiamGia";
-            this.btnGiamGia.Size = new System.Drawing.Size(75, 23);
+            this.btnGiamGia.Size = new System.Drawing.Size(68, 23);
             this.btnGiamGia.TabIndex = 10;
             this.btnGiamGia.Text = "Giảm giá";
             this.btnGiamGia.UseVisualStyleBackColor = false;
@@ -154,7 +160,7 @@
             this.btnChuyenBan.ForeColor = System.Drawing.Color.White;
             this.btnChuyenBan.Location = new System.Drawing.Point(12, 11);
             this.btnChuyenBan.Name = "btnChuyenBan";
-            this.btnChuyenBan.Size = new System.Drawing.Size(92, 23);
+            this.btnChuyenBan.Size = new System.Drawing.Size(82, 23);
             this.btnChuyenBan.TabIndex = 9;
             this.btnChuyenBan.Text = "Chuyển bàn";
             this.btnChuyenBan.UseVisualStyleBackColor = false;
@@ -165,7 +171,7 @@
             this.cbbChuyenBan.FormattingEnabled = true;
             this.cbbChuyenBan.Location = new System.Drawing.Point(12, 43);
             this.cbbChuyenBan.Name = "cbbChuyenBan";
-            this.cbbChuyenBan.Size = new System.Drawing.Size(92, 21);
+            this.cbbChuyenBan.Size = new System.Drawing.Size(82, 21);
             this.cbbChuyenBan.TabIndex = 8;
             // 
             // label2
@@ -182,17 +188,17 @@
             // 
             this.txtTongTien.BackColor = System.Drawing.Color.White;
             this.txtTongTien.ForeColor = System.Drawing.Color.Red;
-            this.txtTongTien.Location = new System.Drawing.Point(129, 37);
+            this.txtTongTien.Location = new System.Drawing.Point(111, 37);
             this.txtTongTien.Multiline = true;
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
-            this.txtTongTien.Size = new System.Drawing.Size(155, 27);
+            this.txtTongTien.Size = new System.Drawing.Size(118, 27);
             this.txtTongTien.TabIndex = 6;
             this.txtTongTien.Text = "0";
             // 
             // nmGiamGia
             // 
-            this.nmGiamGia.Location = new System.Drawing.Point(220, 11);
+            this.nmGiamGia.Location = new System.Drawing.Point(188, 11);
             this.nmGiamGia.Name = "nmGiamGia";
             this.nmGiamGia.Size = new System.Drawing.Size(64, 20);
             this.nmGiamGia.TabIndex = 5;
@@ -206,9 +212,9 @@
             this.btnThanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btnThanhtoan.ForeColor = System.Drawing.Color.White;
             this.btnThanhtoan.Image = global::Quanlyquancafe.Properties.Resources.pay_later;
-            this.btnThanhtoan.Location = new System.Drawing.Point(304, 11);
+            this.btnThanhtoan.Location = new System.Drawing.Point(342, 11);
             this.btnThanhtoan.Name = "btnThanhtoan";
-            this.btnThanhtoan.Size = new System.Drawing.Size(96, 53);
+            this.btnThanhtoan.Size = new System.Drawing.Size(82, 53);
             this.btnThanhtoan.TabIndex = 3;
             this.btnThanhtoan.Text = "Thanh toán";
             this.btnThanhtoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -325,6 +331,35 @@
             this.cbbDanhMuc.TabIndex = 0;
             this.cbbDanhMuc.SelectedIndexChanged += new System.EventHandler(this.cbbDanhMuc_SelectedIndexChanged);
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Ghi chú";
+            this.columnHeader5.Width = 90;
+            // 
+            // txtNote
+            // 
+            this.txtNote.BackColor = System.Drawing.Color.White;
+            this.txtNote.ForeColor = System.Drawing.Color.Black;
+            this.txtNote.Location = new System.Drawing.Point(235, 37);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(101, 27);
+            this.txtNote.TabIndex = 11;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(268, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(68, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Ghi chú";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // UCHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,5 +410,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btnChuyenBan;
         private System.Windows.Forms.Button btnGiamGia;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.TextBox txtNote;
+        private System.Windows.Forms.Button button1;
     }
 }

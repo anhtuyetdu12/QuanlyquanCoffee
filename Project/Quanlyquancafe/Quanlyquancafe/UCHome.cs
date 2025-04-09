@@ -193,7 +193,9 @@ namespace Quanlyquancafe
                     item.SubItems.Add(row["SoLuong"].ToString());
                     item.SubItems.Add(row["DonGia"].ToString());
                     item.SubItems.Add(row["ThanhTien"].ToString());
-                 
+                    string note = row["GhiChu"]?.ToString();
+                    item.SubItems.Add(string.IsNullOrWhiteSpace(note) ? "Trống" : note);   //sẽ kiểm tra cả null, "", và " " (chuỗi toàn khoảng trắng).
+
                     lvBill.Items.Add(item);
                     tongTien += Convert.ToDouble(row["ThanhTien"]); // có dấu phẩy động 
                 }
@@ -221,7 +223,7 @@ namespace Quanlyquancafe
             db.ExeCute(sql, lstPra); // Thực thi Stored Procedure
         }
         //hàm insert Bill info
-        public void InsertBillInfo(int idBill, int idFood, int count)
+        public void InsertBillInfo(int idBill, int idFood, int count, string note)
         {
             db = new Database();
             string sql = "USP_InsertBillInfo"; // Gọi Stored Procedure để thêm món vào bill info
@@ -242,6 +244,11 @@ namespace Quanlyquancafe
                 {
                     key = "@count",
                     value = count.ToString()
+                },
+                new CustomParameter() 
+                { 
+                    key = "@note", 
+                    value = note ?? "Trống" 
                 }
             };
 
@@ -398,9 +405,11 @@ namespace Quanlyquancafe
 
             int idFood = Convert.ToInt32(cbbMonAn.SelectedValue); // Lấy ID món ăn
             int count = (int)numDemMon.Value; // Lấy số lượng món
+            string note = txtNote.Text;
 
             db = new Database();
             string checkBillSql = "USP_GetUncheckBillIDByTableID"; // SP kiểm tra hóa đơn chưa thanh toán
+
             var lstPra = new List<CustomParameter>()
             {
                 new CustomParameter()
@@ -430,7 +439,8 @@ namespace Quanlyquancafe
 
             if (idBill != -1)
             {
-                InsertBillInfo(idBill, idFood, count); // Thêm món vào hóa đơn
+                InsertBillInfo(idBill, idFood, count, txtNote.Text); // Thêm món vào hóa đơn
+                txtNote.Clear();
                 LoadBill(currentTableId); // Cập nhật lại danh sách món trên hóa đơn
             }
             LoadTable();
