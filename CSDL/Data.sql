@@ -819,7 +819,7 @@ alter proc USP_GetListBillByDate
 	@checkOut date
 as
 begin
-	select t.name as [Tên bàn], b.totalPrice as [Tổng tiền] , dateCheckIn as [Ngày vào] , dateCheckOut as [Ngày ra], discount as [Giảm giá]
+	select b.id as[Mã hóa đơn], t.name as [Tên bàn], b.totalPrice as [Tổng tiền] , dateCheckIn as [Ngày vào] , dateCheckOut as [Ngày ra], discount as [Giảm giá]
 	from dbo.Bill as b, dbo.TableFood as t
 	where dateCheckIn >= @checkIn and dateCheckOut <= @checkOut and b.status = 1
 	and t.id = b.idTable
@@ -832,3 +832,63 @@ begin
     select * from dbo.Food
 end
 -- phân trang cho bill
+alter proc USP_GetListBillByDateAndPage
+	@checkIn date,
+	@checkOut date,
+	@page int    
+as
+begin
+	declare @pageRows int = 10    -- 1 trang 10 dòng
+	declare @selectRows int = @pageRows 
+	declare @exceptRows int = (@page - 1) * @pageRows
+
+	-- tao bang tam
+	;with BillShow as (select b.id, t.name as [Tên bàn], b.totalPrice as [Tổng tiền] , dateCheckIn as [Ngày vào] , dateCheckOut as [Ngày ra], discount as [Giảm giá]
+	from dbo.Bill as b, dbo.TableFood as t
+	where dateCheckIn >= @checkIn and dateCheckOut <= @checkOut and b.status = 1
+	and t.id = b.idTable)
+
+	select TOP (@selectRows) * from BillShow where id not in (select TOP (@exceptRows) id from BillShow)
+	
+end
+-- lấy số lượng bill
+
+create proc USP_GetNumBillByDate
+	@checkIn date,
+	@checkOut date
+as
+begin
+	select count(*)
+	from dbo.Bill as b, dbo.TableFood as t
+	where dateCheckIn >= @checkIn and dateCheckOut <= @checkOut and b.status = 1
+	and t.id = b.idTable
+end
+
+select * from dbo.Receipt
+select * from dbo.Bill
+
+-- lưu hóa đơn vào bảng receipt
+CREATE PROCEDURE USP_SaveReceipt
+    @idBill INT,
+    @paymentDate DATETIME,   
+    @totalAmount DECIMAL(18, 2),
+    @discount DECIMAL(18, 2),
+	@discountAmount DECIMAL(18, 2),
+    @method NVARCHAR(50),
+    @changeMoney DECIMAL(18, 2),
+    @guestMoney DECIMAL(18, 2),
+   
+AS
+BEGIN
+
+    -- Lưu thông tin vào bảng Receipts
+    INSERT INTO dbo.Receipt (idBillTD, method, paymentDate, discount, totalAmount,discountAmount, changeMoney, guestMoney)
+    VALUES (@idBill, @method, @paymentDate, @TotalAmount, @discount, @totalAmount,@discountAmount, @changeMoney, @guestMoney);
+
+END;
+
+
+
+
+
+

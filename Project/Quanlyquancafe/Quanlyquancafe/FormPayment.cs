@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace Quanlyquancafe
 {
     public partial class FormPayment : Form
-    {      
+    {
         private int tableId;
         private DateTime dateCheckOut;
         private DateTime dateCheckIn;
@@ -24,7 +24,7 @@ namespace Quanlyquancafe
         public string PaymentMethod; // Phương thức thanh toán
 
         private bool isPrinted = false; // Biến kiểm tra đã in hay chưa
-        public decimal DiscountAmount ; // Biến lưu số tiền giảm giá
+        public decimal DiscountAmount; // Biến lưu số tiền giảm giá
 
         private PrintDocument printDocument = new PrintDocument();
         public FormPayment(decimal totalAmount, int tableId, DateTime dateCheckIn, DateTime dateCheckOut, decimal discountValue)
@@ -41,7 +41,7 @@ namespace Quanlyquancafe
             lblNgayCheckIn.Text = dateCheckIn.ToString("dd/MM/yyyy ");
             lblNgayXuat.Text = dateCheckOut.ToString("dd/MM/yyyy "); // Hiển thị ngày xuất hóa đơn
 
-            printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
+            //   printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
 
             LoadBill(tableId); // Gọi phương thức tải hóa đơn
         }
@@ -55,7 +55,7 @@ namespace Quanlyquancafe
             lblGiamGia.Text = DiscountAmount.ToString("N0") + " %"; // Hiển thị giảm giá
         }
 
-     
+
         private void LoadBill(int tableId)
         {
             try
@@ -73,7 +73,7 @@ namespace Quanlyquancafe
                 if (ds != null && ds.Tables.Count > 1) // Kiểm tra nếu có 2 bảng
                 {
 
-                     billItemsTable = ds.Tables[0]; // Bảng danh sách món ăn
+                    billItemsTable = ds.Tables[0]; // Bảng danh sách món ăn
                     DataTable billTable = ds.Tables[1]; // Bảng thông tin hóa đơn
 
                     if (billTable.Rows.Count > 0)
@@ -109,7 +109,7 @@ namespace Quanlyquancafe
                         }
 
                         // Áp dụng giảm giá
-                        decimal discountMoney = total * (DiscountAmount / 100) ; // Tính số tiền giảm
+                        decimal discountMoney = total * (DiscountAmount / 100); // Tính số tiền giảm
                         TotalAmount = total - discountMoney;
 
                         txtTotal.Text = total.ToString("N0") + " VND";
@@ -131,7 +131,6 @@ namespace Quanlyquancafe
             }
         }
 
-       
 
         //in hóa đơn 
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
@@ -205,7 +204,7 @@ namespace Quanlyquancafe
                 g.DrawString($"Tiền khách đưa: {txtTienKhachDua.Text} VND", font, Brushes.Black, leftMargin, yPos);
                 yPos += 30;
                 g.DrawString($"Tiền thối lại: {txtTienThoi.Text} VND", font, Brushes.Black, leftMargin, yPos);
-               
+
             }
         }
 
@@ -223,11 +222,53 @@ namespace Quanlyquancafe
                 MessageBox.Show("Vui lòng in hóa đơn trước khi xác nhận!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (cbbPhuongThuc.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn phương thức thanh toán!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            try
+            {
+                Database db = new Database();
+                string query = "USP_InsertReceipt"; // Tên stored procedure đã tạo
+
+                // Tính số tiền trả lại
+                decimal changeMoney = customerMoney - TotalAmount + DiscountAmount;
+
+                List<CustomParameter> parameters = new List<CustomParameter>()
+                {
+                    new CustomParameter{ key = "@method", value = cbbPhuongThuc.SelectedItem.ToString() },
+                    new CustomParameter{ key = "@paymentDate", value = DateTime.Now.ToString("yyyy-MM-dd") },
+                    new CustomParameter{ key = "@discount", value = Math.Round(DiscountAmount).ToString()  }, // % giảm giá nếu có, ví dụ 10 (tức 10%)
+                    new CustomParameter{ key = "@totalAmount", value = TotalAmount.ToString() },
+                    new CustomParameter{ key = "@discountAmount", value = DiscountAmount.ToString() },
+                    new CustomParameter{ key = "@changeMoney", value = changeMoney.ToString() },
+                    new CustomParameter{ key = "@guestMoney", value = customerMoney.ToString() }
+                };
+
+                var result = db.ExeCute(query, parameters); // Gọi procedure
+
+                if (result == 1)
+                {
+                    MessageBox.Show("Lưu hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Lưu hóa đơn thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             CustomerMoney = customerMoney;
-            ChangeMoney = CustomerMoney - TotalAmount;
+            ChangeMoney = customerMoney - TotalAmount + DiscountAmount;
             PaymentMethod = cbbPhuongThuc.SelectedItem.ToString();
+
 
 
             DialogResult = DialogResult.OK; // Xác nhận thông tin hợp lệ
@@ -246,7 +287,7 @@ namespace Quanlyquancafe
 
         private void cbbPhuongThuc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedMethod = cbbPhuongThuc.SelectedItem.ToString();          
+            string selectedMethod = cbbPhuongThuc.SelectedItem.ToString();
         }
 
         private void txtKhachDua_TextChanged(object sender, EventArgs e)
@@ -258,12 +299,12 @@ namespace Quanlyquancafe
 
                 if (tienThoi >= 0)
                 {
-                    txtTienThoi.Text =  tienThoi.ToString("N0") + " VND";
+                    txtTienThoi.Text = tienThoi.ToString("N0") + " VND";
                     txtTienThoi.ForeColor = Color.Green; // Màu xanh nếu đủ tiền
                 }
                 else
                 {
-                    txtTienThoi.Text =  Math.Abs(tienThoi).ToString("N0") + " VND";
+                    txtTienThoi.Text = Math.Abs(tienThoi).ToString("N0") + " VND";
                     txtTienThoi.ForeColor = Color.Red; // Màu đỏ nếu thiếu tiền
                 }
             }

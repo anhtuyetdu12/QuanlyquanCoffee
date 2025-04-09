@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddProduct.Designer.cs">
-      <DependentUpon>AddProduct.cs</DependentUpon>
-    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="frmManager.cs">
       <SubType>Form</SubType>
@@ -110,9 +104,6 @@
     <Compile Include="UCTable.Designer.cs">
       <DependentUpon>UCTable.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddProduct.resx">
-      <DependentUpon>AddProduct.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmManager.resx">
       <DependentUpon>frmManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +255,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\settings.png" />
     <None Include="Resources\fa1e2a299092d9128398485d79633bc0.jpg" />
     <None Include="Resources\fb376d968401aa4de35cb79fe0ce72ef.jpg" />
     <None Include="Resources\f141e80628eb87b93c6e54c03d35f71b.jpg" />
