@@ -35,11 +35,11 @@
             this.dtpBatDau = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnFirst = new System.Windows.Forms.Button();
-            this.btnPreviours = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnLast = new System.Windows.Forms.Button();
             this.txtPageBill = new System.Windows.Forms.TextBox();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPreviours = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -121,53 +121,18 @@
             this.panel3.Size = new System.Drawing.Size(870, 37);
             this.panel3.TabIndex = 4;
             // 
-            // btnFirst
+            // txtPageBill
             // 
-            this.btnFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-            this.btnFirst.FlatAppearance.BorderSize = 0;
-            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFirst.ForeColor = System.Drawing.Color.White;
-            this.btnFirst.Location = new System.Drawing.Point(3, 4);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(82, 30);
-            this.btnFirst.TabIndex = 5;
-            this.btnFirst.Text = "First";
-            this.btnFirst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnFirst.UseVisualStyleBackColor = false;
-            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
-            // 
-            // btnPreviours
-            // 
-            this.btnPreviours.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-            this.btnPreviours.FlatAppearance.BorderSize = 0;
-            this.btnPreviours.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreviours.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreviours.ForeColor = System.Drawing.Color.White;
-            this.btnPreviours.Location = new System.Drawing.Point(110, 4);
-            this.btnPreviours.Name = "btnPreviours";
-            this.btnPreviours.Size = new System.Drawing.Size(82, 30);
-            this.btnPreviours.TabIndex = 6;
-            this.btnPreviours.Text = "Previours";
-            this.btnPreviours.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnPreviours.UseVisualStyleBackColor = false;
-            this.btnPreviours.Click += new System.EventHandler(this.btnPreviours_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(677, 4);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(82, 30);
-            this.btnNext.TabIndex = 7;
-            this.btnNext.Text = "Next";
-            this.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.txtPageBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPageBill.Location = new System.Drawing.Point(409, 6);
+            this.txtPageBill.Multiline = true;
+            this.txtPageBill.Name = "txtPageBill";
+            this.txtPageBill.ReadOnly = true;
+            this.txtPageBill.Size = new System.Drawing.Size(94, 25);
+            this.txtPageBill.TabIndex = 9;
+            this.txtPageBill.Text = "1";
+            this.txtPageBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPageBill.TextChanged += new System.EventHandler(this.txtPageBill_TextChanged);
             // 
             // btnLast
             // 
@@ -185,15 +150,53 @@
             this.btnLast.UseVisualStyleBackColor = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
-            // txtPageBill
+            // btnNext
             // 
-            this.txtPageBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPageBill.Location = new System.Drawing.Point(409, 9);
-            this.txtPageBill.Name = "txtPageBill";
-            this.txtPageBill.Size = new System.Drawing.Size(94, 21);
-            this.txtPageBill.TabIndex = 9;
-            this.txtPageBill.Text = "1";
-            this.txtPageBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(677, 4);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(82, 30);
+            this.btnNext.TabIndex = 7;
+            this.btnNext.Text = "Next";
+            this.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnPreviours
+            // 
+            this.btnPreviours.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnPreviours.FlatAppearance.BorderSize = 0;
+            this.btnPreviours.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreviours.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreviours.ForeColor = System.Drawing.Color.White;
+            this.btnPreviours.Location = new System.Drawing.Point(110, 4);
+            this.btnPreviours.Name = "btnPreviours";
+            this.btnPreviours.Size = new System.Drawing.Size(82, 30);
+            this.btnPreviours.TabIndex = 6;
+            this.btnPreviours.Text = "Previours";
+            this.btnPreviours.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPreviours.UseVisualStyleBackColor = false;
+            this.btnPreviours.Click += new System.EventHandler(this.btnPreviours_Click);
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+            this.btnFirst.FlatAppearance.BorderSize = 0;
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirst.ForeColor = System.Drawing.Color.White;
+            this.btnFirst.Location = new System.Drawing.Point(3, 4);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(82, 30);
+            this.btnFirst.TabIndex = 5;
+            this.btnFirst.Text = "First";
+            this.btnFirst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnFirst.UseVisualStyleBackColor = false;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // UCBill
             // 

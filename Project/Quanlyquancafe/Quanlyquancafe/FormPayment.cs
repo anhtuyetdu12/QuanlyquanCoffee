@@ -263,15 +263,7 @@ namespace Quanlyquancafe
 
                 var result = db.ExeCute(query, parameters); // Gọi procedure
 
-                if (result == 1)
-                {
-                    MessageBox.Show("Lưu hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Lưu hóa đơn thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                
             }
             catch (Exception ex)
             {

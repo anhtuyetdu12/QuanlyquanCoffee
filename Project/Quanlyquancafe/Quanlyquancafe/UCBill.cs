@@ -15,9 +15,6 @@ namespace Quanlyquancafe
         private Database db;
         private DataTable dt;
 
-        private int currentPage = 1;
-        private int totalPages = 1;
-        private const int rowsPerPage = 10;
 
         public UCBill()
         {
@@ -35,6 +32,7 @@ namespace Quanlyquancafe
             dtpKetThuc.Value = dtpBatDau.Value.AddMonths(1).AddDays(-1);
         }
 
+        //lay danh sach bill theo ngay
         private void LoadListBillByDate(DateTime checkIn, DateTime checkOut)
         {
             db = new Database();
@@ -61,7 +59,7 @@ namespace Quanlyquancafe
             
         }
 
-        private void LoadListBillByDateAndPage(DateTime checkIn, DateTime checkOut, int pageNumber)
+        private DataTable LoadListBillByDateAndPage(DateTime checkIn, DateTime checkOut, int pageNumber)
         {
             db = new Database();
             string sql = "USP_GetListBillByDateAndPage";
@@ -86,12 +84,12 @@ namespace Quanlyquancafe
             };
 
             var dt = db.SelectData(sql, lstPra);
-            txtPageBill.Text = $"{pageNumber}";
 
+            return dt;
         }
 
         //xdinh tổng số trang
-        private void GetNumBillByDate(DateTime checkIn, DateTime checkOut)
+        private int GetNumBillByDate(DateTime checkIn, DateTime checkOut)
         {
             db = new Database();
             string sql = "USP_GetNumBillByDate";
@@ -111,21 +109,19 @@ namespace Quanlyquancafe
             };
 
             var dt = db.SelectData(sql, lstPra);
-
             if (dt.Rows.Count > 0)
             {
-                int numBill = Convert.ToInt32(dt.Rows[0][0]);
-                totalPages = (int)Math.Ceiling((double)numBill / rowsPerPage);
+                return Convert.ToInt32(dt.Rows[0][0]);  // giả sử cột đầu tiên là tổng số bản ghi
             }
+            return 0;
 
         }
 
         private void btnThongke_Click(object sender, EventArgs e)
         {
             LoadListBillByDate(dtpBatDau.Value, dtpKetThuc.Value);
-            currentPage = 1;
-            GetNumBillByDate(dtpBatDau.Value, dtpKetThuc.Value);
-            LoadListBillByDateAndPage(dtpBatDau.Value, dtpKetThuc.Value, currentPage);
+          
+           
         }
 
         private void UCBill_Load(object sender, EventArgs e)
@@ -136,33 +132,50 @@ namespace Quanlyquancafe
         private void btnFirst_Click(object sender, EventArgs e)
         {
             txtPageBill.Text = "1";
-            LoadListBillByDateAndPage(dtpBatDau.Value, dtpKetThuc.Value, currentPage);
-
         }
 
         private void btnLast_Click(object sender, EventArgs e)
         {
-            currentPage = totalPages;
-            LoadListBillByDateAndPage(dtpBatDau.Value, dtpKetThuc.Value, currentPage);
+            int sumRecord = GetNumBillByDate(dtpBatDau.Value, dtpKetThuc.Value);
+
+            int lastPage = sumRecord / 10;
+
+            if(sumRecord % 10 != 0)
+            {
+                lastPage++;
+            }
+            txtPageBill.Text = lastPage.ToString();
+
         }
 
         private void btnPreviours_Click(object sender, EventArgs e)
         {
-            if (currentPage > 1)
-            {
-                currentPage--;
-                LoadListBillByDateAndPage(dtpBatDau.Value, dtpKetThuc.Value, currentPage);
-            }
+            int page = Convert.ToInt32(txtPageBill.Text);
 
+            if(page > 1)
+            {
+                page--;
+            }
+            txtPageBill.Text = page.ToString();
+                
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (currentPage < totalPages)
+            int page = Convert.ToInt32(txtPageBill.Text);
+            int sumRecord = GetNumBillByDate(dtpBatDau.Value, dtpKetThuc.Value);
+
+            if(page < sumRecord)
             {
-                currentPage++;
-                LoadListBillByDateAndPage(dtpBatDau.Value, dtpKetThuc.Value, currentPage);
+                page++;
             }
+            txtPageBill.Text = page.ToString();
+         
+        }
+
+        private void txtPageBill_TextChanged(object sender, EventArgs e)
+        {
+            dgvBill.DataSource = LoadListBillByDateAndPage(dtpBatDau.Value, dtpKetThuc.Value, Convert.ToInt32(txtPageBill.Text)) ;
         }
     }
 }

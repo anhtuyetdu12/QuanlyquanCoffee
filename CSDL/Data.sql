@@ -867,26 +867,6 @@ end
 select * from dbo.Receipt
 select * from dbo.Bill
 
--- lưu hóa đơn vào bảng receipt
-CREATE PROCEDURE USP_SaveReceipt
-    @idBill INT,
-    @paymentDate DATETIME,   
-    @totalAmount DECIMAL(18, 2),
-    @discount DECIMAL(18, 2),
-	@discountAmount DECIMAL(18, 2),
-    @method NVARCHAR(50),
-    @changeMoney DECIMAL(18, 2),
-    @guestMoney DECIMAL(18, 2),
-   
-AS
-BEGIN
-
-    -- Lưu thông tin vào bảng Receipts
-    INSERT INTO dbo.Receipt (idBillTD, method, paymentDate, discount, totalAmount,discountAmount, changeMoney, guestMoney)
-    VALUES (@idBill, @method, @paymentDate, @TotalAmount, @discount, @totalAmount,@discountAmount, @changeMoney, @guestMoney);
-
-END;
-
 
 UPDATE Receipt
 SET DiscountAmount = 0;
